@@ -1,11 +1,12 @@
 ---
-title: "Read your first order"
-description: "Use a local file to see how many of ten requested shares have filled."
+title: "Inspect a paper order offline"
+navTitle: "Offline order lab"
+description: "Run the paper order lab with Node.js to see how many shares filled. The example uses local data and needs no Alpaca account."
 ---
 
-## Inspect a paper order snapshot
+## Check an accepted paper order {/* #inspect-a-paper-order-snapshot */}
 
-[Download the paper order lab](/paper-order-lab.zip). You need Node.js 22 or later and an archive extractor. The ZIP contains a script and three synthetic JSON snapshots of the same ten-share US stock order in paper trading. Once downloaded, the example runs offline without packages or an Alpaca account.
+[Download the paper order lab](/paper-order-lab.zip). You need Node.js 22 or later and an archive extractor. The ZIP contains a script and three synthetic JSON snapshots of one US stock order in paper trading. The script reads the local files offline. It needs no packages, credentials or Alpaca account.
 
 In the folder containing the ZIP, run:
 
@@ -15,7 +16,7 @@ cd paper-order-lab
 node inspect.mjs fixtures/accepted.json
 ```
 
-You should see:
+This example shows the output for an accepted paper order.
 
 ```text
 Order: 11111111-2222-4333-8444-555555555555
@@ -23,12 +24,17 @@ Status: accepted
 Filled: 0 of 10 shares
 ```
 
-The example’s `filled_qty` is `"0"`. At this snapshot, zero shares have filled. To see what changes when some shares execute, read the second file:
+`accepted` means the Trading API received the order. Before your app shows any shares as bought, read `filled_qty`. Here, `qty` is `"10"` and `filled_qty` is `"0"`. Your dashboard should show ten shares requested and zero filled.
+
+## Compare the next two snapshots
+
+From the same lab folder, run both files in sequence.
 
 ```sh
 node inspect.mjs fixtures/partial.json
+node inspect.mjs fixtures/canceled.json
 ```
 
-The status is now `partially_filled`. The script reports `Filled: 3 of 10 shares`. The order ID is the same. These three shares are the total filled so far for this order.
+Check the order ID in both results. The `partially_filled` and `canceled` snapshots each print `Filled: 3 of 10 shares` for that same ID. The later snapshot still includes the three earlier fills. Adding the two totals would count those shares twice.
 
-What should your dashboard show if the rest is canceled? [Check the final snapshot](/guides/check-an-order).
+For this sample, the final dashboard entry is **3 of 10 shares filled, 7 canceled**. For a customer who supplies only a status, [look up the customer’s own filled quantity](/guides/check-an-order#read-the-filled-quantity-after-cancellation).

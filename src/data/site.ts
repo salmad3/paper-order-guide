@@ -163,10 +163,10 @@ export const siteConfig: SiteConfig = {
   name: 'Paper Order Guide',
   description:
     'Read the fill quantity on an Alpaca paper order and turn that support decision into a runnable Thally guide.',
-  repoUrl: '',
+  repoUrl: 'https://github.com/salmad3/paper-order-guide',
   links: [
-    { label: 'Run the example', href: '/quickstart' },
-    { label: 'Build this site', href: '/guides/publish-with-thally' },
+    { label: 'Run the order lab', href: '/quickstart' },
+    { label: 'Compare search results', href: '/guides/check-your-build#try-the-search-on-this-example-site' },
   ],
   brand: brandPresets[brandPreset],
   brandPreset,

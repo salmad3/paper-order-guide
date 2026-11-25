@@ -1,12 +1,18 @@
 ---
-title: "Did the order fill?"
-description: "Read an Alpaca paper order and tell a customer how many shares filled."
+title: "Alpaca paper order guide"
+navTitle: "Overview"
+description: "For developers building an order history or answering support tickets about US stock orders in paper trading."
 ---
 
-Your app requested ten shares. The order came back `accepted`. What can you tell the person waiting for a fill?
+Your dashboard shows an order for ten shares. How many actually traded? Start with the evidence you have.
 
-If you build a trading dashboard or answer support tickets for one, two fields matter here. `status` tells you where the order stands. `filled_qty` tells you how much of this order has executed so far. Start with a sample that moves from zero shares filled to three, then gets canceled.
+- [Answer a cancellation ticket](/guides/check-an-order#read-the-filled-quantity-after-cancellation). The customer has the order status. Find the executed quantity before you reply.
+- [Recover an order after a lost response](/guides/check-an-order#recover-the-order-after-a-lost-response). Your app saved its client order ID. Use it to find the original request.
+- [Run the offline lab](/quickstart). Inspect three snapshots of one order with Node.js. No account or keys required.
 
-[Read your first order](/quickstart) with Node.js and three small JSON files. The files are hand-written examples of Alpaca Trading API paper order fields. They work offline without credentials.
+On an Alpaca Trading API paper order, `qty` is the quantity requested, `filled_qty` is the total executed so far, and `status` records the stage the order has reached.
 
-If you already have an order ID and need its latest paper snapshot, [look up an existing paper order](/guides/check-an-order#look-up-an-existing-paper-order). To teach the same workflow to another developer, [build a support guide with Thally](/guides/publish-with-thally).
+## Use this guide with Thally
+
+- [Build a support guide](/guides/publish-with-thally). Write a troubleshooting answer and test what a reader can retrieve from your own site.
+- [Query this guide with MCP](/guides/agent-access). Find a passage and follow its citation to the original instructions.

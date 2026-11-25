@@ -1,0 +1,36 @@
+---
+title: "Connect an agent to this guide"
+navTitle: "Agent access"
+description: "Find the public MCP endpoint, read the source behind a citation, or fetch a page as Markdown or JSON."
+keywords: ["MCP endpoint", "agent access", "citation", "Markdown", "JSON"]
+---
+
+An assistant can read this guide anonymously. The [documentation index](/llms.txt) lists the pages and their human URLs. For a client that uses the Model Context Protocol (MCP), connect to the same content through Thally’s read-only server.
+
+## Connect an MCP client
+
+Choose a remote server with **Streamable HTTP** transport. Copy the `endpoint` from [this site’s MCP manifest](/.well-known/mcp.json). For the published guide, enter this URL.
+
+```text
+https://paper-order-guide.thally.app/api/mcp
+```
+
+On a local preview, open the manifest on that preview and use its endpoint. The server reads published documentation without an API key. Call `list_pages` to see the available page IDs, titles and URLs. Keep brokerage credentials in the application that reads your paper account.
+
+## Follow a citation to its source
+
+1. Call `search_sections` with the reader’s question as `query` and `limit: 3`. Read each candidate’s `content` and select the one that supports your answer.
+2. Pass the selected `page_id` to `read_page` as `pageId`. For example, a hit from the troubleshooting guide takes `{"pageId":"guides/check-an-order"}`. Check the surrounding Markdown for conditions the excerpt leaves out.
+3. Return the hit’s `section_url` with the supported claim. Its fragment identifies an entry in the page’s `headings` by `id`. For example, [Recover the order after a lost response](/guides/check-an-order#recover-the-order-after-a-lost-response) opens the lookup procedure in context.
+
+The guide can establish which field an application should inspect. A customer’s executed quantity requires that customer’s paper order record. A quantity in a sample belongs to the sample.
+
+## Read a page over HTTP
+
+An HTTP client can append `?format=md` to a page URL to fetch Markdown or `?format=json` to fetch headings, links and navigation. In a browser, open the [quickstart as Markdown](/quickstart.md) or the [quickstart as JSON](/api/docs/quickstart?format=json). In JSON, `nav.next.href` gives the next page when one exists and `canonical_url` gives the human URL to cite.
+
+```sh
+curl -fsS 'https://paper-order-guide.thally.app/quickstart?format=md'
+```
+
+To inspect a real tool response alongside its rendered heading, [open the search comparison](/guides/check-your-build#try-the-search-on-this-example-site).

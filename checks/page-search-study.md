@@ -41,3 +41,19 @@ From the running local checkout, `node checks/verify-guide.mjs http://localhost:
 ## After correcting the tutorial and stock-order lab
 
 In a subsequent local review, the lab was scoped to quantity-based stock orders and the tutorial began asking writers to distinguish the customer’s order from the fixture. The resulting section temporarily slipped from second to third for the writer paraphrase. We changed “which passage they’ll get” to “which excerpt an assistant gets for that ticket” in the procedure and replayed the seven questions. The procedure then ranked first in section search and its page ranked second behind the homepage. At `e010ccc` those ranks were second and fourth. The short cancellation ticket still opened the practical guide first on both interfaces. The other five questions kept their first page and first section. These results are specific to the seven recorded questions.
+
+## After adding task navigation and an agent reference
+
+The expanded guide has five indexed pages. The verification appendix remains available by direct link. The seven original questions are unchanged. On this build, full-text page search and MCP section search both put the intended destination first for each question. The writer’s paraphrase improved from page rank two to one. Its first passage still tells the author to inspect the excerpt, edit one passage, rebuild and compare the same ticket.
+
+Adding homepage links initially moved the offline lab from first to third in page search for the no-account question. The correct passage still ranked first in section search. Revising the quickstart description to identify the runnable lab, local data and account requirements restored its first-place page result.
+
+We also asked three questions about using the documentation itself. On the earlier site, none had a complete answer in the first three MCP passages. With the agent reference in the index, each retrieved the passage that completes the task first.
+
+| Agent task | Evidence in the first retrieved passage |
+| --- | --- |
+| Configure a client | The server URL, Streamable HTTP transport and anonymous access |
+| Verify a citation | How to pass a result’s `page_id` to `read_page` and check the fragment against a heading |
+| Navigate without HTML | How to request Markdown or JSON and follow `nav.next.href` |
+
+Thally’s card links rendered in HTML and Markdown but were absent from the homepage’s JSON `content.links` in an earlier draft. Ordinary Markdown links carried all five task destinations across all three formats. The [local verifier](verify-guide.mjs) checks the link inventory and [three agent questions](agent-access-cases.json) alongside the original replay. These results describe ten fixed questions on this corpus.

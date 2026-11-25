@@ -1,6 +1,8 @@
 {
   "theme": "default",
-  "stylesheets": ["/reader-navigation.css"],
+  "stylesheets": [
+    "/reader-navigation.css"
+  ],
   "appearance": {
     "contentIcons": "accent"
   },
@@ -17,39 +19,58 @@
     ]
   },
   "navbar": {
+    "logo": {
+      "showTitle": true
+    },
     "primary": {
-      "label": "Run the example",
+      "label": "Run the order lab",
       "href": "/quickstart"
     },
     "links": [
       {
-        "label": "Build this site",
-        "href": "/guides/publish-with-thally"
+        "label": "Compare search results",
+        "href": "/guides/check-your-build#try-the-search-on-this-example-site"
       }
     ]
   },
   "tabs": [
     {
-      "tab": "Order guide",
+      "tab": "Paper orders",
       "groups": [
         {
-          "group": "Paper orders",
+          "group": "Getting started",
           "pages": [
             "introduction",
-            "quickstart",
+            "quickstart"
+          ]
+        },
+        {
+          "group": "Troubleshooting",
+          "pages": [
             "guides/check-an-order"
           ]
         }
       ]
     },
     {
-      "tab": "Build with Thally",
+      "tab": "Write a guide",
       "groups": [
         {
-          "group": "Write and test",
+          "group": "Build and test",
           "pages": [
             "guides/publish-with-thally",
             "guides/check-your-build"
+          ]
+        }
+      ]
+    },
+    {
+      "tab": "Agent reference",
+      "groups": [
+        {
+          "group": "Documentation access",
+          "pages": [
+            "guides/agent-access"
           ]
         }
       ]
@@ -57,5 +78,51 @@
   ],
   "ai": {
     "chat": false
+  },
+  "footer": {
+    "links": [
+      {
+        "heading": "Paper orders",
+        "items": [
+          {
+            "label": "Run the offline lab",
+            "href": "/quickstart"
+          },
+          {
+            "label": "Troubleshoot an order",
+            "href": "/guides/check-an-order"
+          }
+        ]
+      },
+      {
+        "heading": "Build with Thally",
+        "items": [
+          {
+            "label": "Write a support guide",
+            "href": "/guides/publish-with-thally"
+          },
+          {
+            "label": "Compare search results",
+            "href": "/guides/check-your-build#try-the-search-on-this-example-site"
+          }
+        ]
+      },
+      {
+        "heading": "For agents",
+        "items": [
+          {
+            "label": "Connect to the docs",
+            "href": "/guides/agent-access"
+          },
+          {
+            "label": "Documentation index",
+            "href": "/llms.txt"
+          }
+        ]
+      }
+    ],
+    "socials": {
+      "github": "https://github.com/salmad3/paper-order-guide"
+    }
   }
 }

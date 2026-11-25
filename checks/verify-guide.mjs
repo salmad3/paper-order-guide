@@ -23,7 +23,15 @@ const pages = new Map()
 let requestId = 0
 
 async function fetchPath(path, options) {
-  const response = await fetch(new URL(path, origin), { signal: AbortSignal.timeout(20_000), ...options })
+  const request = () => fetch(new URL(path, origin), { signal: AbortSignal.timeout(20_000), ...options })
+  let response = await request()
+  if (response.status === 429) {
+    const seconds = Number(response.headers.get('retry-after') ?? '60')
+    assert.ok(Number.isFinite(seconds) && seconds >= 0 && seconds <= 120, 'Unexpected retry interval')
+    await response.body?.cancel()
+    await new Promise(resolve => setTimeout(resolve, (seconds + 1) * 1000))
+    response = await request()
+  }
   assert.equal(response.status, 200, path + ' returned ' + response.status)
   return response
 }
@@ -59,7 +67,7 @@ function checkTarget(hit) {
 }
 
 const appendix = 'guides/check-your-build'
-const expectedIds = ['introduction','quickstart','guides/check-an-order','guides/publish-with-thally']
+const expectedIds = ['introduction','quickstart','guides/check-an-order','guides/publish-with-thally','guides/agent-access']
 const manifest = await (await fetchPath('/.well-known/mcp.json')).json()
 const discovery = await (await fetchPath('/ai.txt')).text()
 assert.equal(discovery.match(/^Docs-MCP:\s*(\S+)$/m)?.[1], manifest.endpoint, 'Agent discovery and MCP manifest point to different servers')
@@ -102,6 +110,27 @@ for (const name of ['paper-order-lab.zip','order-guide-starter.zip','search-pass
   artifacts[name] = hash(served)
 }
 
+// Homepage links should be discoverable through the structured graph as well as in the rendered guide.
+const home = await (await fetchPath('/?format=json')).json()
+const homeLinks = new Set(home.content.links.map(link => link.url))
+for (const path of [
+  '/guides/check-an-order#read-the-filled-quantity-after-cancellation',
+  '/guides/check-an-order#recover-the-order-after-a-lost-response',
+  '/quickstart', '/guides/publish-with-thally', '/guides/agent-access'
+]) {
+  assert.ok(homeLinks.has(path), 'Homepage link missing from the JSON graph: ' + path)
+  assert.ok(pages.get('introduction').html.includes('href="' + path + '"'), 'Homepage link missing from HTML: ' + path)
+}
+
+const agentQuestions = JSON.parse(await readFile(new URL('./agent-access-cases.json', import.meta.url)))
+for (const {question, section} of agentQuestions) {
+  const args = {query:question, limit:3}
+  const pageHits = await callTool('search_docs', args)
+  assert.equal(new URL(pageHits.results[0].url).pathname, '/guides/agent-access', 'First page for: ' + question)
+  const sectionHits = await callTool('search_sections', args)
+  assert.equal(checkTarget(sectionHits.results[0]), '/guides/agent-access#' + section, 'First citation for: ' + question)
+}
+
 const records = []
 for (const {id,question} of questions) {
   const params = new URLSearchParams({q:question, mode:'fulltext', limit:'3'})
@@ -133,5 +162,5 @@ if (values.capture) {
     sections:sections.map(hit => ({path:hit.path,excerptSha256:hash(hit.excerpt)}))
   }))
   assert.deepEqual(signatures, observations, 'Native search changed. Inspect current passages with --capture before reviewing a new baseline.')
-  console.log('Verified MCP discovery, five page reads and their citations, three downloads, and both search interfaces for ' + records.length + ' reviewed questions on ' + values.profile + '.')
+  console.log('Verified MCP discovery, ' + pages.size + ' page reads and their citations, three downloads, and both search interfaces for ' + records.length + ' reviewed questions on ' + values.profile + ', plus five homepage links and three agent tasks.')
 }

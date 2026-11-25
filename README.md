@@ -1,8 +1,13 @@
 # Paper Order Guide
 
-A local Thally documentation sample for developers who need to interpret the fill quantity on an Alpaca Trading API paper order. The three JSON files are small synthetic projections of an order object. They contain no account data. The included Node script reads files offline. The practical guide also documents how a developer can read an existing order in their own paper account.
+This is the source for the [Paper Order Guide](https://paper-order-guide.thally.app/), a Thally site for developers who need to interpret fills on an Alpaca Trading API paper order.
 
-## Open the reviewer preview
+- [Run the quickstart](https://paper-order-guide.thally.app/quickstart) to inspect the same synthetic order at acceptance, after a partial fill, and after cancellation. The downloaded Node script runs offline.
+- [Check a canceled order](https://paper-order-guide.thally.app/guides/check-an-order#read-the-filled-quantity-after-cancellation) or [recover a lost response](https://paper-order-guide.thally.app/guides/check-an-order#recover-the-order-after-a-lost-response) to find the read-only lookup for an existing paper order.
+- [Build a support guide with Thally](https://paper-order-guide.thally.app/guides/publish-with-thally) to write a troubleshooting passage and test what your own site returns.
+- [Connect an agent](https://paper-order-guide.thally.app/guides/agent-access) to read and cite documentation. The [page index](https://paper-order-guide.thally.app/llms.txt) and [MCP manifest](https://paper-order-guide.thally.app/.well-known/mcp.json) are public.
+
+## Run the site locally
 
 Use Node.js 22.23.4 and npm. From the project root:
 
@@ -13,10 +18,7 @@ npm run build && npm run typecheck
 npm start -- --hostname 127.0.0.1 --port 3041
 ```
 
-- Start with [Did the order fill?](http://localhost:3041/) and [the quickstart](http://localhost:3041/quickstart).
-- [Check how much of an order filled](http://localhost:3041/guides/check-an-order) follows three cumulative snapshots and shows two read-only lookup routes.
-- [Build a support guide with Thally](http://localhost:3041/guides/publish-with-thally) is the teaching article. It gives the reader an unfinished troubleshooting page to write and test in their own project.
-- [Check the site you built](http://localhost:3041/guides/check-your-build) contains the browser comparison, source verification, raw MCP request and download check.
+Open the [local preview](http://localhost:3041/). The [local search comparison](http://localhost:3041/guides/check-your-build#try-the-search-on-this-example-site) runs both full-text page search and MCP section search against that build.
 
 ## Reproduce the checks
 
@@ -38,4 +40,4 @@ Thally supplies the MDX renderer, full-text page search, MCP section search, age
 
 [Review the short cancellation ticket](checks/short-ticket-study.md) for the two tested versions of the same passage, the seven-query replay, and what a documentation agent can establish from a status alone.
 
-[See why the homepage won page search](checks/page-search-study.md) and how three native page keywords changed the result across the same seven questions.
+[See why the homepage won page search](checks/page-search-study.md) and how the revised navigation performed on seven support and writing questions and three agent tasks.

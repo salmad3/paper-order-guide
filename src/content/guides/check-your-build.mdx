@@ -1,16 +1,19 @@
 ---
-title: "Check the site you built"
+title: "Test search and verify your build"
+navTitle: "Verify your build"
 description: "Compare the served troubleshooting passage with your source file, inspect a raw MCP response, and verify the lab your reader downloads."
 noindex: true
 ---
 
-Use these checks when a preview looks stale, a search result surprises you, or a teammate cannot run your download. Run the commands from the root of the site you built. Set `SITE` to your preview’s actual address and port.
+Try a ticket on this site below. For a guide you built yourself, [check what your preview serves](#compare-the-served-page-with-your-source) or [verify the downloaded lab](#check-the-download-your-reader-receives). Run those commands from your project root.
 
 ## Try the search on this example site
 
-Run a question against this example site. Page search shows a page, its matching heading and a snippet. Section search shows the passage an assistant would receive. Read it on its own, then expand the other results to see what came next.
+Run a question against this example site. Page search shows a page, its matching heading and a snippet. Section search shows the passage an assistant would receive. Read the first excerpt on its own, then follow its citation. To connect a client directly, [open the MCP reference](/guides/agent-access).
 
 <SectionSearch>My paper order was canceled. Did any shares fill?</SectionSearch>
+
+[Return to the teaching article](/guides/publish-with-thally#test-your-answer-with-thally-section-search) to test the passage on your own preview.
 
 ## Compare the served page with your source
 
@@ -66,5 +69,3 @@ node inspect.mjs fixtures/canceled.json
 ```
 
 Expect the canceled status and three of ten shares filled. Open `fixtures/canceled.json` to check that the order ID and both quantities match what the program printed. The synthetic snapshot makes this check repeatable without credentials or network access. A reader using an existing Alpaca paper order will see that order’s own values.
-
-[Return to the teaching article](/guides/publish-with-thally)

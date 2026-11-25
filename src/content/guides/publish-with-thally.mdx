@@ -1,9 +1,10 @@
 ---
 title: "Build a support guide with Thally"
+navTitle: "Write and test a support guide"
 description: "Write the answer to a paper-order support ticket, preview your own site, and see which passage Thally returns."
 ---
 
-“My paper order was canceled. Did any shares fill?” Build a three-page site that helps a developer answer that ticket. You’ll write the troubleshooting passage yourself, then ask your own Thally preview the customer’s question.
+“My paper order was canceled. Did any shares fill?” Build a three-page site that helps a developer answer that ticket. You’ll write the missing answer, open it in your own preview, and ask Thally which passage it would give a support agent. To see the result before you start, [try the ticket on the finished site](/guides/check-your-build#try-the-search-on-this-example-site).
 
 ## Start a new site
 
@@ -17,7 +18,7 @@ npm pkg get dependencies.next
 
 If you see `"16.4.1"`, run `npm install --save-exact next@16.4.6`. That starter pin stopped our production build on a security advisory. Updating it and committing the lockfile resolved the build failure. For a different pin, install the scaffold’s lockfile with `npm ci`.
 
-Save these links in your new project. Use **Save link as** for the JavaScript file if your browser opens it as text.
+From the root of `order-docs`, save these three downloads at the paths shown. If the helper opens in your browser, use **Save link as**.
 
 | Download | Save as |
 | --- | --- |
@@ -25,7 +26,7 @@ Save these links in your new project. Use **Save link as** for the JavaScript fi
 | [Paper order lab](/paper-order-lab.zip) | `public/paper-order-lab.zip` |
 | [Search helper](/search-passages.mjs) | `search-passages.mjs` |
 
-Set aside the generated examples. The starter pages give you an introduction, a working quickstart and a troubleshooting page with only a title and a customer question.
+Set aside the generated examples. The starter includes an introduction and a working quickstart. Open its troubleshooting page after extraction. You’ll find the customer’s question where your answer belongs.
 
 ```sh
 mkdir ../order-docs-seed
@@ -80,7 +81,15 @@ node search-passages.mjs "$SITE" "My paper order was canceled. Did any shares fi
 
 Read the first passage as if it were the entire answer. Could a teammate explain why the customer’s fill quantity is unknown, how to retrieve that order, and what its `filled_qty` means? Zero means no shares filled. A positive value gives the total that filled before cancellation. Only the lab’s `canceled.json` establishes that three of ten shares filled and the remaining seven were canceled. Open the result’s link to confirm the port and wording match your preview.
 
-Record your paragraph’s rank among the three results, or write “missing.” Stop when your paragraph ranks first and answers both the ticket and the labeled example correctly. If it gives the customer the sample’s numbers or leaves out the read-only lookup or field interpretation, revise the text. If it passes but ranks lower or is missing, confirm it appears on your preview, then try the words a customer uses for the problem in its heading. After either edit, rebuild and restart the preview. Repeat the same question and compare both the rank and the answer. [Check whether your preview serves the latest draft](/guides/check-your-build#compare-the-served-page-with-your-source)
+Record your paragraph’s rank among the three results, or write “missing.”
+
+| What came back? | What to do |
+| --- | --- |
+| The excerpt assigns the lab’s fills to the customer or omits the lookup. | Rewrite the paragraph. Even a first-place result can give the wrong answer. |
+| The paragraph is accurate but ranks lower or is missing. | Find it on your preview, then try the customer’s wording in its heading. |
+| Your paragraph ranks first and answers both the ticket and the labeled example correctly. | Open its citation. If it lands on your paragraph, the guide is ready to publish. |
+
+After an edit, rebuild, restart the preview and repeat the same question. Compare the rank and the answer. [Check whether your preview serves the latest draft](/guides/check-your-build#compare-the-served-page-with-your-source)
 
 ## Publish the revision you tested
 

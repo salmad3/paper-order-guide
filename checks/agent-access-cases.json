@@ -1,0 +1,14 @@
+[
+  {
+    "question": "I have an MCP client. What server address, transport, and authentication should I configure for these docs?",
+    "section": "connect-an-mcp-client"
+  },
+  {
+    "question": "My tool returned a section_url and a page_id. How do I verify that citation before passing it to someone?",
+    "section": "follow-a-citation-to-its-source"
+  },
+  {
+    "question": "Can I read the quickstart as Markdown and use JSON to find the next page in the guide?",
+    "section": "read-a-page-over-http"
+  }
+]

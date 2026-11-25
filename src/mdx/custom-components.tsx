@@ -1,4 +1,5 @@
 import type { MDXComponents } from 'mdx/types'
+import { OrderSnapshots } from './order-snapshots'
 import { SectionSearch } from './section-search'
 
 /**
@@ -32,5 +33,6 @@ import { SectionSearch } from './section-search'
  *  `src/components/mdx/rich-content.tsx` for how the built-ins are written.
  */
 export const customComponents: MDXComponents = {
+  OrderSnapshots,
   SectionSearch,
 }

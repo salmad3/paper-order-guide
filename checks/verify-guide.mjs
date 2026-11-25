@@ -113,11 +113,12 @@ for (const name of ['paper-order-lab.zip','order-guide-starter.zip','search-pass
 // Homepage links should be discoverable through the structured graph as well as in the rendered guide.
 const home = await (await fetchPath('/?format=json')).json()
 const homeLinks = new Set(home.content.links.map(link => link.url))
-for (const path of [
+const expectedHomeLinks = [
   '/guides/check-an-order#read-the-filled-quantity-after-cancellation',
   '/guides/check-an-order#recover-the-order-after-a-lost-response',
-  '/quickstart', '/guides/publish-with-thally', '/guides/agent-access'
-]) {
+  '/quickstart', '/quickstart#compare-the-next-two-snapshots', '/guides/publish-with-thally', '/guides/agent-access'
+]
+for (const path of expectedHomeLinks) {
   assert.ok(homeLinks.has(path), 'Homepage link missing from the JSON graph: ' + path)
   assert.ok(pages.get('introduction').html.includes('href="' + path + '"'), 'Homepage link missing from HTML: ' + path)
 }
@@ -162,5 +163,5 @@ if (values.capture) {
     sections:sections.map(hit => ({path:hit.path,excerptSha256:hash(hit.excerpt)}))
   }))
   assert.deepEqual(signatures, observations, 'Native search changed. Inspect current passages with --capture before reviewing a new baseline.')
-  console.log('Verified MCP discovery, ' + pages.size + ' page reads and their citations, three downloads, and both search interfaces for ' + records.length + ' reviewed questions on ' + values.profile + ', plus five homepage links and three agent tasks.')
+  console.log('Verified MCP discovery, ' + pages.size + ' page reads and their citations, three downloads, and both search interfaces for ' + records.length + ' reviewed questions on ' + values.profile + ', plus ' + expectedHomeLinks.length + ' homepage links and three agent tasks.')
 }

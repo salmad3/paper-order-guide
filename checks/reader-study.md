@@ -25,3 +25,11 @@ The revised exercise gives the learner two different pieces of evidence. The tic
 One fresh coding agent started in an empty directory, wrote the missing passage, built the three-page site, and ran the lab ZIP downloaded from its own quickstart. Its first draft ranked first of three. The excerpt gave the read-only lookup by Alpaca order ID, explained zero and positive `filled_qty`, and assigned the three filled and seven canceled shares to the synthetic example. The unanswered prompt ranked second and the introduction third. The first result’s link opened the learner’s wording. The default example port was occupied. The learner used another port as the article instructed.
 
 A separate trial held the heading, site and question fixed. Both a paragraph that gave the unidentified customer three fills and one that explained how to look up their own quantity ranked first. Only the latter met the exercise’s completion criteria. This is why the tutorial asks the author to read the returned passage and check each claim against the supplied evidence.
+
+## From a browser draft to a fresh site
+
+The review exercise uses [two recorded MCP excerpts](../public/passage-trial.json). A fresh reader used a keyboard at a 390px viewport to edit a copy of the first passage and compare it with the second. Both recorded passages kept their original rank. The reader copied their own paragraph from the editor.
+
+We pasted that clipboard text under the ticket’s heading in a newly scaffolded three-page site. After the build, the downloaded search helper returned the reader’s paragraph first of three. Its citation opened the authored heading and `read_page` contained the copied Markdown. This replay covers one learner draft and one question.
+
+The fresh build also exposed a preview-address mismatch. With `127.0.0.1` as the site URL, the HTML canonical used that host while MCP and the JSON page cited `localhost`. Setting `THALLY_SITE_URL` to `http://localhost:$PORT` before rebuilding made all three agree. The server still binds to loopback.

@@ -1,5 +1,6 @@
 import type { MDXComponents } from 'mdx/types'
 import { OrderSnapshots } from './order-snapshots'
+import { PassageReview } from './passage-review'
 import { SectionSearch } from './section-search'
 
 /**
@@ -34,5 +35,6 @@ import { SectionSearch } from './section-search'
  */
 export const customComponents: MDXComponents = {
   OrderSnapshots,
+  PassageReview,
   SectionSearch,
 }

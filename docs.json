@@ -1,0 +1,61 @@
+{
+  "theme": "default",
+  "stylesheets": ["/reader-navigation.css"],
+  "appearance": {
+    "contentIcons": "accent"
+  },
+  "markdown": {
+    "enabled": true
+  },
+  "i18n": {
+    "defaultLocale": "en",
+    "locales": [
+      {
+        "code": "en",
+        "label": "English"
+      }
+    ]
+  },
+  "navbar": {
+    "primary": {
+      "label": "Run the example",
+      "href": "/quickstart"
+    },
+    "links": [
+      {
+        "label": "Build this site",
+        "href": "/guides/publish-with-thally"
+      }
+    ]
+  },
+  "tabs": [
+    {
+      "tab": "Order guide",
+      "groups": [
+        {
+          "group": "Paper orders",
+          "pages": [
+            "introduction",
+            "quickstart",
+            "guides/check-an-order"
+          ]
+        }
+      ]
+    },
+    {
+      "tab": "Build with Thally",
+      "groups": [
+        {
+          "group": "Write and test",
+          "pages": [
+            "guides/publish-with-thally",
+            "guides/check-your-build"
+          ]
+        }
+      ]
+    }
+  ],
+  "ai": {
+    "chat": false
+  }
+}

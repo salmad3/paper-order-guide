@@ -1,0 +1,70 @@
+---
+title: "Check the site you built"
+description: "Compare the served troubleshooting passage with your source file, inspect a raw MCP response, and verify the lab your reader downloads."
+noindex: true
+---
+
+Use these checks when a preview looks stale, a search result surprises you, or a teammate cannot run your download. Run the commands from the root of the site you built. Set `SITE` to your preview’s actual address and port.
+
+## Try the search on this example site
+
+Run a question against this example site. Page search shows a page, its matching heading and a snippet. Section search shows the passage an assistant would receive. Read it on its own, then expand the other results to see what came next.
+
+<SectionSearch>My paper order was canceled. Did any shares fill?</SectionSearch>
+
+## Compare the served page with your source
+
+This check compares the troubleshooting page’s title and body with the file you edited on disk. If you followed the tutorial, the command reads the address you saved. For a different site, set `SITE` to its origin instead. It also checks the canonical URL in the HTML. Set `THALLY_SITE_URL` before building if the canonical points at a different origin.
+
+```sh
+SITE="$(cat ../order-docs-seed/preview-origin)"
+node --input-type=module - "$SITE" <<'JS'
+import assert from 'node:assert/strict'
+import { readFileSync } from 'node:fs'
+import matter from 'gray-matter'
+import { mdxToMarkdown } from '@thallylabs/core/markdown'
+const url = new URL('/guides/check-an-order', process.argv[2])
+const file = matter(readFileSync('src/content/guides/check-an-order.mdx', 'utf8'))
+const response = await fetch(url.href + '?format=json')
+assert.equal(response.status, 200)
+const page = await response.json()
+assert.equal(page.id, 'guides/check-an-order')
+assert.equal(page.title, file.data.title)
+assert.equal(page.content.mdx.trim(), mdxToMarkdown(file.content, 'agents').trim(), 'Different troubleshooting passage')
+const html = await (await fetch(url)).text()
+assert.ok(html.includes(`rel="canonical" href="${url.href}"`), 'Different canonical URL')
+console.log('Verified', url.href, '|', page.title)
+JS
+```
+
+A pass prints the address and title of your troubleshooting page. If the body differs, check which checkout and port you’re serving. Stop the preview, rebuild from that checkout, and start it again.
+
+## Read the native search response
+
+The article’s [search helper](/search-passages.mjs) sends the question to Thally’s `search_sections` tool and prints the headings, links and excerpts in the order returned. Here is the same request to run directly. Set `SITE` to your preview and replace the question with yours.
+
+```sh
+curl -sS -D - "$SITE/api/mcp" \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  --data '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{
+    "name":"search_sections","arguments":{"query":"My paper order was canceled. Did any shares fill?","limit":3}}}'
+```
+
+Inspect `result.structuredContent.results`. Each `content` is the passage an assistant could read. Open its `section_url` to compare the excerpt with its surrounding instructions. If the server returns HTTP 429, wait for the interval in its `Retry-After` header before trying again.
+
+To check a citation through MCP, pass the search result’s `page_id` as the `pageId` argument to `read_page`. For the troubleshooting page, use `{"pageId":"guides/check-an-order"}`. Match the fragment of `section_url` to an `id` in the returned `headings`. For this ticket, that page explains how to interpret a canceled paper order. Only the customer’s own order record can establish how many of their shares filled.
+
+## Check the download your reader receives
+
+Open your own quickstart and download its ZIP into a new folder. Extract it and run the last snapshot from the downloaded copy.
+
+```sh
+unzip paper-order-lab.zip
+cd paper-order-lab
+node inspect.mjs fixtures/canceled.json
+```
+
+Expect the canceled status and three of ten shares filled. Open `fixtures/canceled.json` to check that the order ID and both quantities match what the program printed. The synthetic snapshot makes this check repeatable without credentials or network access. A reader using an existing Alpaca paper order will see that order’s own values.
+
+[Return to the teaching article](/guides/publish-with-thally)

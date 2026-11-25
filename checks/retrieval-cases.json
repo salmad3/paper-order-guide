@@ -1,0 +1,31 @@
+{
+  "registered": "Before inspecting the new article, guide, or the Alpaca site's native search rankings.",
+  "method": "Ask all five questions verbatim through GET /api/search and MCP search_sections. Review the first three section excerpts independently against all required facts. A heading, link, or invitation to read more does not itself answer a question. Record the first page and every returned section even when the complete answer is absent. Assess the text without the order of the results. This is a small diagnostic set.",
+  "cases": [
+    {
+      "id": "acknowledgment",
+      "question": "My paper order says accepted. Can I mark all ten shares as bought now, and which value should the app read before doing that?",
+      "requires": ["Distinguish acknowledgment or receipt of the order from execution.", "Name filled_qty and identify zero executed in the accepted ten-share example, or state that the actual executed quantity comes from filled_qty."]
+    },
+    {
+      "id": "cancellation",
+      "question": "The paper order for ten shares was canceled after three had filled. Should my order history show zero or three, and where do the other seven belong?",
+      "requires": ["Three remain cumulatively filled after cancellation.", "The seven remaining shares were never filled and the canceled order is no longer working for them."]
+    },
+    {
+      "id": "ambiguous-response",
+      "question": "Our paper-trading client lost its network response. I still have the ID our app assigned. How do I check that request without creating another order?",
+      "requires": ["Use a read-only lookup for the client-assigned identifier; identify the by-client-order-ID endpoint or the exact equivalent.", "Do not blindly place another order to recover a missing response."]
+    },
+    {
+      "id": "first-run",
+      "question": "A coworker sent me this paper-order lab. I have no Alpaca account. What can I run to see a real example of the output, and where does the order data come from?",
+      "requires": ["Give an executable command from the downloaded example, including any required file arguments or working directory.", "Identify the data as local sample fixtures and explain that the command does not contact a brokerage or require credentials."]
+    },
+    {
+      "id": "author-retrieval",
+      "question": "I’m writing a support page in Thally. After I draft my answer, how can I see which part a teammate’s question retrieves, and decide whether I need to revise it?",
+      "requires": ["Tell the author how to query native section search on the local site and inspect a returned passage.", "Give a reader-centered criterion for whether the passage itself resolves the question, and a concrete action when it does not."]
+    }
+  ]
+}

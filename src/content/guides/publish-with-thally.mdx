@@ -1,0 +1,87 @@
+---
+title: "Build a support guide with Thally"
+description: "Write the answer to a paper-order support ticket, preview your own site, and see which passage Thally returns."
+---
+
+“My paper order was canceled. Did any shares fill?” Build a three-page site that helps a developer answer that ticket. You’ll write the troubleshooting passage yourself, then ask your own Thally preview the customer’s question.
+
+## Start a new site
+
+Use Node.js 22.23.4, npm, Git, a POSIX shell and `unzip`. Check `node --version` first. If you use nvm, run `nvm install 22.23.4` and `nvm use 22.23.4`. The install needs internet access. From a directory where `order-docs` and `order-docs-seed` are new names, run:
+
+```sh
+npx --yes create-thally-docs@0.10.135 order-docs --yes --no-install
+cd order-docs
+npm pkg get dependencies.next
+```
+
+If you see `"16.4.1"`, run `npm install --save-exact next@16.4.6`. That starter pin stopped our production build on a security advisory. Updating it and committing the lockfile resolved the build failure. For a different pin, install the scaffold’s lockfile with `npm ci`.
+
+Save these links in your new project. Use **Save link as** for the JavaScript file if your browser opens it as text.
+
+| Download | Save as |
+| --- | --- |
+| [Starter pages](/order-guide-starter.zip) | `order-guide-starter.zip` |
+| [Paper order lab](/paper-order-lab.zip) | `public/paper-order-lab.zip` |
+| [Search helper](/search-passages.mjs) | `search-passages.mjs` |
+
+Set aside the generated examples. The starter pages give you an introduction, a working quickstart and a troubleshooting page with only a title and a customer question.
+
+```sh
+mkdir ../order-docs-seed
+mv src/content openapi.yaml ../order-docs-seed/
+unzip order-guide-starter.zip -d src/content
+unzip public/paper-order-lab.zip -d ../order-docs-seed
+```
+
+## Write the troubleshooting passage
+
+From the site root, compare the two synthetic paper-order snapshots and open the raw canceled record:
+
+```sh
+(cd ../order-docs-seed/paper-order-lab && node inspect.mjs fixtures/partial.json)
+(cd ../order-docs-seed/paper-order-lab && node inspect.mjs fixtures/canceled.json)
+cat ../order-docs-seed/paper-order-lab/fixtures/canceled.json
+```
+
+Match the order ID in both summaries to the raw record. Which field changed when the sample order was canceled? Which field still counts all the shares that filled?
+
+In `src/content/guides/check-an-order.mdx`, add a `##` heading in the customer’s words. Write a short paragraph explaining what the status alone tells them. Show how to look up their existing paper order by its Alpaca ID with the read-only `GET /v2/orders/{order_id}` and how to interpret a zero or positive `filled_qty`. Use the lab order as a labeled example. Account for both its filled shares and its canceled remainder.
+
+## Connect the pages and preview your edit
+
+In `docs.json`, replace the value of `tabs` with the array below. Set `ai.chat` to `false`. In `src/data/site.ts`, give `siteConfig` a name and description and change its seed footer link from `/changelog` to `/guides/check-an-order`.
+
+```json
+[{"tab":"Order guide","groups":[{"group":"Paper orders","pages":[
+  "introduction","quickstart","guides/check-an-order"
+]}]}]
+```
+
+Use a free port. If 3062 is occupied, change `PORT` below. Save the origin alongside the seed files so the second terminal can find the same preview.
+
+```sh
+PORT=3062
+export THALLY_SITE_URL="http://127.0.0.1:$PORT"
+printf '%s\n' "$THALLY_SITE_URL" > ../order-docs-seed/preview-origin
+npm run build && npm run typecheck && npm start -- --hostname 127.0.0.1 --port "$PORT"
+```
+
+Wait for this terminal to print `Ready`. If startup reports `EADDRINUSE`, choose another port and rerun the whole block before searching. Open `/guides/check-an-order` at the address you just saved. Find your heading and read your passage. Follow the homepage’s quickstart link and run its downloaded example to check the reader’s path.
+
+## Test your answer with Thally section search
+
+A teammate has a question your draft support page should answer. To check which excerpt an assistant gets for that ticket, run the [search helper](/search-passages.mjs) from the site root in a second terminal. Use the running preview from the previous step. The helper calls Thally’s `search_sections` tool and prints each result’s rank, heading, link and text.
+
+```sh
+SITE="$(cat ../order-docs-seed/preview-origin)"
+node search-passages.mjs "$SITE" "My paper order was canceled. Did any shares fill?"
+```
+
+Read the first passage as if it were the entire answer. Could a teammate explain why the customer’s fill quantity is unknown, how to retrieve that order, and what its `filled_qty` means? Zero means no shares filled. A positive value gives the total that filled before cancellation. Only the lab’s `canceled.json` establishes that three of ten shares filled and the remaining seven were canceled. Open the result’s link to confirm the port and wording match your preview.
+
+Record your paragraph’s rank among the three results, or write “missing.” Stop when your paragraph ranks first and answers both the ticket and the labeled example correctly. If it gives the customer the sample’s numbers or leaves out the read-only lookup or field interpretation, revise the text. If it passes but ranks lower or is missing, confirm it appears on your preview, then try the words a customer uses for the problem in its heading. After either edit, rebuild and restart the preview. Repeat the same question and compare both the rank and the answer. [Check whether your preview serves the latest draft](/guides/check-your-build#compare-the-served-page-with-your-source)
+
+## Publish the revision you tested
+
+For a public site, commit your source, lockfile and lab ZIP and push the project to your GitHub repository. In Thally Cloud, choose **Create a site**, select a `thally.app` address, then **Use an existing repository**. Connect your repository and production branch and select **Publish site** after reviewing the optional product sources and knowledge surfaces. Once it shows **Live**, open the published quickstart in a signed-out window and run the search helper against the public origin. For a local review, the preview above is your stopping point. [Thally publishing quickstart](https://docs.thally.io/quickstart)

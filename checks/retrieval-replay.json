@@ -1,0 +1,319 @@
+{
+  "scope": "Seven reviewed questions after the stock-order and tutorial accuracy checks. See page-search-study.md and reader-study.md for the edits and their measured limits.",
+  "questionsSha256": "1601cc6215669e7bd3bfa68a0055b3341c1ba3eb56977341204063e4842325d1",
+  "probesSha256": "90c54e67abc160d6fabd7fc144a53f5e933581b5bebb0b3b2b171a6b1cf24fb3",
+  "profiles": {
+    "next": [
+      {
+        "id": "acknowledgment",
+        "pages": [
+          "/quickstart#inspect-a-paper-order-snapshot",
+          "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+          "/"
+        ],
+        "sections": [
+          {
+            "path": "/quickstart#inspect-a-paper-order-snapshot",
+            "excerptSha256": "afb96c87ae7e96eb7e260cf5877a13c30bdcde3bdef6964c60eaa5da6d2d716b"
+          },
+          {
+            "path": "/",
+            "excerptSha256": "c8b8a3ca5888968c615bb387f684dda2e0171f2d6e900e2415df291618b451e2"
+          },
+          {
+            "path": "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+            "excerptSha256": "88ab44e2b07855bd7c086830e032ff6e95755f999e33f0e8a6e99179b9f6c0bc"
+          }
+        ]
+      },
+      {
+        "id": "cancellation",
+        "pages": [
+          "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+          "/quickstart#inspect-a-paper-order-snapshot",
+          "/"
+        ],
+        "sections": [
+          {
+            "path": "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+            "excerptSha256": "88ab44e2b07855bd7c086830e032ff6e95755f999e33f0e8a6e99179b9f6c0bc"
+          },
+          {
+            "path": "/guides/publish-with-thally#test-your-answer-with-thally-section-search",
+            "excerptSha256": "0fa940e3827efd9274ed07f5b28538b317776a609f0bb84a52171e3892a17328"
+          },
+          {
+            "path": "/quickstart#inspect-a-paper-order-snapshot",
+            "excerptSha256": "afb96c87ae7e96eb7e260cf5877a13c30bdcde3bdef6964c60eaa5da6d2d716b"
+          }
+        ]
+      },
+      {
+        "id": "ambiguous-response",
+        "pages": [
+          "/guides/check-an-order#recover-the-order-after-a-lost-response",
+          "/",
+          "/quickstart#inspect-a-paper-order-snapshot"
+        ],
+        "sections": [
+          {
+            "path": "/guides/check-an-order#recover-the-order-after-a-lost-response",
+            "excerptSha256": "a7b5c3c7d92db7eeddf6331b18736a5bf90bd5ce19703c53a5f825671d69933d"
+          },
+          {
+            "path": "/",
+            "excerptSha256": "c8b8a3ca5888968c615bb387f684dda2e0171f2d6e900e2415df291618b451e2"
+          },
+          {
+            "path": "/guides/check-an-order#look-up-an-existing-paper-order",
+            "excerptSha256": "89183aba7346aa3d570a9b80b501e09d97bec4f563761b9c3b9de9b9eaff8d75"
+          }
+        ]
+      },
+      {
+        "id": "first-run",
+        "pages": [
+          "/quickstart#inspect-a-paper-order-snapshot",
+          "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+          "/"
+        ],
+        "sections": [
+          {
+            "path": "/quickstart#inspect-a-paper-order-snapshot",
+            "excerptSha256": "afb96c87ae7e96eb7e260cf5877a13c30bdcde3bdef6964c60eaa5da6d2d716b"
+          },
+          {
+            "path": "/guides/publish-with-thally#start-a-new-site",
+            "excerptSha256": "9ba8d54e2e566e198a580b7e0ca68dd84539b64e645dc21fbdab94032bf82e31"
+          },
+          {
+            "path": "/guides/check-an-order#look-up-an-existing-paper-order",
+            "excerptSha256": "89183aba7346aa3d570a9b80b501e09d97bec4f563761b9c3b9de9b9eaff8d75"
+          }
+        ]
+      },
+      {
+        "id": "author-retrieval",
+        "pages": [
+          "/guides/publish-with-thally#test-your-answer-with-thally-section-search",
+          "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+          "/quickstart#inspect-a-paper-order-snapshot"
+        ],
+        "sections": [
+          {
+            "path": "/guides/publish-with-thally#test-your-answer-with-thally-section-search",
+            "excerptSha256": "0fa940e3827efd9274ed07f5b28538b317776a609f0bb84a52171e3892a17328"
+          },
+          {
+            "path": "/guides/publish-with-thally",
+            "excerptSha256": "bda835b8092f37df14d5b4b150cae0b55205661beb124fad3d3a99a61029ef76"
+          },
+          {
+            "path": "/guides/publish-with-thally#start-a-new-site",
+            "excerptSha256": "9ba8d54e2e566e198a580b7e0ca68dd84539b64e645dc21fbdab94032bf82e31"
+          }
+        ]
+      },
+      {
+        "id": "short-customer-ticket",
+        "pages": [
+          "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+          "/",
+          "/quickstart#inspect-a-paper-order-snapshot"
+        ],
+        "sections": [
+          {
+            "path": "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+            "excerptSha256": "88ab44e2b07855bd7c086830e032ff6e95755f999e33f0e8a6e99179b9f6c0bc"
+          },
+          {
+            "path": "/",
+            "excerptSha256": "c8b8a3ca5888968c615bb387f684dda2e0171f2d6e900e2415df291618b451e2"
+          },
+          {
+            "path": "/guides/publish-with-thally",
+            "excerptSha256": "bda835b8092f37df14d5b4b150cae0b55205661beb124fad3d3a99a61029ef76"
+          }
+        ]
+      },
+      {
+        "id": "author-transfer-1",
+        "pages": [
+          "/",
+          "/guides/publish-with-thally#test-your-answer-with-thally-section-search",
+          "/quickstart#inspect-a-paper-order-snapshot"
+        ],
+        "sections": [
+          {
+            "path": "/guides/publish-with-thally#test-your-answer-with-thally-section-search",
+            "excerptSha256": "0fa940e3827efd9274ed07f5b28538b317776a609f0bb84a52171e3892a17328"
+          },
+          {
+            "path": "/",
+            "excerptSha256": "c8b8a3ca5888968c615bb387f684dda2e0171f2d6e900e2415df291618b451e2"
+          },
+          {
+            "path": "/guides/publish-with-thally",
+            "excerptSha256": "bda835b8092f37df14d5b4b150cae0b55205661beb124fad3d3a99a61029ef76"
+          }
+        ]
+      }
+    ],
+    "worker": [
+      {
+        "id": "acknowledgment",
+        "pages": [
+          "/quickstart#inspect-a-paper-order-snapshot",
+          "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+          "/"
+        ],
+        "sections": [
+          {
+            "path": "/quickstart#inspect-a-paper-order-snapshot",
+            "excerptSha256": "afb96c87ae7e96eb7e260cf5877a13c30bdcde3bdef6964c60eaa5da6d2d716b"
+          },
+          {
+            "path": "/",
+            "excerptSha256": "c8b8a3ca5888968c615bb387f684dda2e0171f2d6e900e2415df291618b451e2"
+          },
+          {
+            "path": "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+            "excerptSha256": "88ab44e2b07855bd7c086830e032ff6e95755f999e33f0e8a6e99179b9f6c0bc"
+          }
+        ]
+      },
+      {
+        "id": "cancellation",
+        "pages": [
+          "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+          "/quickstart#inspect-a-paper-order-snapshot",
+          "/"
+        ],
+        "sections": [
+          {
+            "path": "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+            "excerptSha256": "88ab44e2b07855bd7c086830e032ff6e95755f999e33f0e8a6e99179b9f6c0bc"
+          },
+          {
+            "path": "/guides/publish-with-thally#test-your-answer-with-thally-section-search",
+            "excerptSha256": "0fa940e3827efd9274ed07f5b28538b317776a609f0bb84a52171e3892a17328"
+          },
+          {
+            "path": "/quickstart#inspect-a-paper-order-snapshot",
+            "excerptSha256": "afb96c87ae7e96eb7e260cf5877a13c30bdcde3bdef6964c60eaa5da6d2d716b"
+          }
+        ]
+      },
+      {
+        "id": "ambiguous-response",
+        "pages": [
+          "/guides/check-an-order#recover-the-order-after-a-lost-response",
+          "/",
+          "/quickstart#inspect-a-paper-order-snapshot"
+        ],
+        "sections": [
+          {
+            "path": "/guides/check-an-order#recover-the-order-after-a-lost-response",
+            "excerptSha256": "a7b5c3c7d92db7eeddf6331b18736a5bf90bd5ce19703c53a5f825671d69933d"
+          },
+          {
+            "path": "/",
+            "excerptSha256": "c8b8a3ca5888968c615bb387f684dda2e0171f2d6e900e2415df291618b451e2"
+          },
+          {
+            "path": "/guides/check-an-order#look-up-an-existing-paper-order",
+            "excerptSha256": "89183aba7346aa3d570a9b80b501e09d97bec4f563761b9c3b9de9b9eaff8d75"
+          }
+        ]
+      },
+      {
+        "id": "first-run",
+        "pages": [
+          "/quickstart#inspect-a-paper-order-snapshot",
+          "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+          "/"
+        ],
+        "sections": [
+          {
+            "path": "/quickstart#inspect-a-paper-order-snapshot",
+            "excerptSha256": "afb96c87ae7e96eb7e260cf5877a13c30bdcde3bdef6964c60eaa5da6d2d716b"
+          },
+          {
+            "path": "/guides/publish-with-thally#start-a-new-site",
+            "excerptSha256": "9ba8d54e2e566e198a580b7e0ca68dd84539b64e645dc21fbdab94032bf82e31"
+          },
+          {
+            "path": "/guides/check-an-order#look-up-an-existing-paper-order",
+            "excerptSha256": "89183aba7346aa3d570a9b80b501e09d97bec4f563761b9c3b9de9b9eaff8d75"
+          }
+        ]
+      },
+      {
+        "id": "author-retrieval",
+        "pages": [
+          "/guides/publish-with-thally#test-your-answer-with-thally-section-search",
+          "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+          "/quickstart#inspect-a-paper-order-snapshot"
+        ],
+        "sections": [
+          {
+            "path": "/guides/publish-with-thally#test-your-answer-with-thally-section-search",
+            "excerptSha256": "0fa940e3827efd9274ed07f5b28538b317776a609f0bb84a52171e3892a17328"
+          },
+          {
+            "path": "/guides/publish-with-thally",
+            "excerptSha256": "bda835b8092f37df14d5b4b150cae0b55205661beb124fad3d3a99a61029ef76"
+          },
+          {
+            "path": "/guides/publish-with-thally#start-a-new-site",
+            "excerptSha256": "9ba8d54e2e566e198a580b7e0ca68dd84539b64e645dc21fbdab94032bf82e31"
+          }
+        ]
+      },
+      {
+        "id": "short-customer-ticket",
+        "pages": [
+          "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+          "/",
+          "/quickstart#inspect-a-paper-order-snapshot"
+        ],
+        "sections": [
+          {
+            "path": "/guides/check-an-order#read-the-filled-quantity-after-cancellation",
+            "excerptSha256": "88ab44e2b07855bd7c086830e032ff6e95755f999e33f0e8a6e99179b9f6c0bc"
+          },
+          {
+            "path": "/",
+            "excerptSha256": "c8b8a3ca5888968c615bb387f684dda2e0171f2d6e900e2415df291618b451e2"
+          },
+          {
+            "path": "/guides/publish-with-thally",
+            "excerptSha256": "bda835b8092f37df14d5b4b150cae0b55205661beb124fad3d3a99a61029ef76"
+          }
+        ]
+      },
+      {
+        "id": "author-transfer-1",
+        "pages": [
+          "/",
+          "/guides/publish-with-thally#test-your-answer-with-thally-section-search",
+          "/quickstart#inspect-a-paper-order-snapshot"
+        ],
+        "sections": [
+          {
+            "path": "/guides/publish-with-thally#test-your-answer-with-thally-section-search",
+            "excerptSha256": "0fa940e3827efd9274ed07f5b28538b317776a609f0bb84a52171e3892a17328"
+          },
+          {
+            "path": "/",
+            "excerptSha256": "c8b8a3ca5888968c615bb387f684dda2e0171f2d6e900e2415df291618b451e2"
+          },
+          {
+            "path": "/guides/publish-with-thally",
+            "excerptSha256": "bda835b8092f37df14d5b4b150cae0b55205661beb124fad3d3a99a61029ef76"
+          }
+        ]
+      }
+    ]
+  }
+}

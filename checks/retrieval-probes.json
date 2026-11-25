@@ -1,0 +1,22 @@
+{
+  "registered": "Supplemental probes. The short ticket and writer paraphrase also appeared in the previous local study at 7f30f0a. Keep the original five questions intact.",
+  "cases": [
+    {
+      "id": "short-customer-ticket",
+      "question": "My paper order was canceled. Did any shares fill?",
+      "requires": [
+        "Explain that cancellation stops the remaining shares and the order’s own filled_qty determines how many executed.",
+        "Distinguish any synthetic example from the unknown customer quantity and give a read-only way to find the existing paper order."
+      ]
+    },
+    {
+      "id": "author-transfer-1",
+      "question": "Our help article reads well in the browser. How can I check which excerpt an assistant will get for a ticket and tell if changing the wording helped?",
+      "requires": [
+        "Run a section search on the author’s own built preview using a ticket as the query.",
+        "Inspect whether a returned passage resolves the ticket on its own, using the source evidence.",
+        "Compare the same ticket before and after an editorial change and rebuild; a heading or link alone is insufficient."
+      ]
+    }
+  ]
+}

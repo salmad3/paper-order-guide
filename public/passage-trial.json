@@ -1,0 +1,38 @@
+{
+  "question": "My paper order was canceled. Did any shares fill?",
+  "method": "Two selected builds of the same three-page learner site. Only the candidate passage varied. Each result is the first excerpt returned by search_sections with limit 3. Citation paths are relative to that learner site. The example orders below are separate synthetic records.",
+  "runs": [
+    {
+      "label": "Original passage",
+      "heading": "My paper order was canceled. Did any shares fill?",
+      "rank": 1,
+      "returned": 3,
+      "citationPath": "/guides/check-an-order#my-paper-order-was-canceled-did-any-shares-fill",
+      "excerpt": "Three shares filled before cancellation, and seven were canceled. The final lab record shows filled_qty is \"3\" and qty is \"10\" , so you can mark the customer’s ticket resolved.",
+      "editorialFinding": "This passage assigns a count from a synthetic order to a customer who supplied only a status."
+    },
+    {
+      "label": "Revised passage",
+      "heading": "My paper order was canceled. Did any shares fill?",
+      "rank": 1,
+      "returned": 3,
+      "citationPath": "/guides/check-an-order#my-paper-order-was-canceled-did-any-shares-fill",
+      "excerpt": "Cancellation stops any remaining shares from filling. The canceled status alone leaves your fill quantity unknown. Use your order’s Alpaca ID with the paper Trading API’s read-only GET /v2/orders/{order_id} and check filled_qty in the response. Zero means no shares filled, and a positive value gives the total filled before cancellation. In the lab’s synthetic order, three of ten shares filled and the remaining seven were canceled.",
+      "editorialFinding": "This passage gives the read-only lookup for the customer’s own order and attributes the example count to the synthetic record."
+    }
+  ],
+  "records": [
+    {
+      "id": "11111111-2222-4333-8444-555555555555",
+      "status": "canceled",
+      "qty": "10",
+      "filled_qty": "3"
+    },
+    {
+      "id": "bbbbbbbb-1111-4222-8333-000000000003",
+      "status": "canceled",
+      "qty": "10",
+      "filled_qty": "0"
+    }
+  ]
+}

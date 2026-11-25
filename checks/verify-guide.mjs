@@ -66,6 +66,11 @@ function checkTarget(hit) {
   return target
 }
 
+const trialPath = '/passage-trial.json'
+const trial = await (await fetchPath(trialPath)).json()
+assert.deepEqual(trial, JSON.parse(await readFile(new URL('../public/passage-trial.json', import.meta.url))), 'Served passage trial differs from the source')
+const unsupportedExcerpt = trial.runs[0].excerpt
+
 const appendix = 'guides/check-your-build'
 const expectedIds = ['introduction','quickstart','guides/check-an-order','guides/publish-with-thally','guides/agent-access']
 const manifest = await (await fetchPath('/.well-known/mcp.json')).json()
@@ -99,7 +104,11 @@ for (const id of [...expectedIds, appendix]) {
   assert.equal(directRead.page_id, id)
   assert.ok(projection.content.mdx.trim())
   assert.equal(hash(directRead.markdown), hash(projection.content.mdx), 'JSON and MCP bodies differ for ' + id)
-  if (id === appendix) assert.match(html, /<meta name="robots" content="[^"]*noindex/)
+  assert.ok(!directRead.markdown.includes(unsupportedExcerpt), 'Historical customer reply leaked into the agent page: ' + id)
+  if (id === appendix) {
+    assert.match(html, /<meta name="robots" content="[^"]*noindex/)
+    assert.ok(projection.content.links.some(link => link.url === trialPath), 'Missing the recorded trial in the appendix links')
+  }
   pages.set(id,{html, headings:directRead.headings, sourceSha256:hash(source)})
 }
 const artifacts = {}
@@ -145,6 +154,7 @@ for (const {id,question} of questions) {
   const sections = response.results.map(hit => ({
     path:checkTarget(hit), heading:hit.heading, excerpt:hit.content
   }))
+  assert.ok(sections.every(hit => !hit.excerpt.includes(unsupportedExcerpt)), 'Historical customer reply indexed for: ' + question)
   records.push({id,question,pageResults,sections})
 }
 

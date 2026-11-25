@@ -1,0 +1,8 @@
+{
+  "id": "11111111-2222-4333-8444-555555555555",
+  "client_order_id": "receipt-demo-01",
+  "asset_class": "us_equity",
+  "qty": "10",
+  "filled_qty": "3",
+  "status": "partially_filled"
+}

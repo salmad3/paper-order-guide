@@ -1,0 +1,12 @@
+---
+title: "Did the order fill?"
+description: "Read an Alpaca paper order and tell a customer how many shares filled."
+---
+
+Your app requested ten shares. The order came back `accepted`. What can you tell the person waiting for a fill?
+
+If you build a trading dashboard or answer support tickets for one, two fields matter here. `status` tells you where the order stands. `filled_qty` tells you how much of this order has executed so far. Start with a sample that moves from zero shares filled to three, then gets canceled.
+
+[Read your first order](/quickstart) with Node.js and three small JSON files. The files are hand-written examples of Alpaca Trading API paper order fields. They work offline without credentials.
+
+If you already have an order ID and need its latest paper snapshot, [look up an existing paper order](/guides/check-an-order#look-up-an-existing-paper-order). To teach the same workflow to another developer, [build a support guide with Thally](/guides/publish-with-thally).

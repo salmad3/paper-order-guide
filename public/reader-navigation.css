@@ -1,0 +1,12 @@
+/* Keep the site title available to screen readers when the header shows only the logo. */
+@media (max-width: 420px) {
+  .thally-docs-brand > span:first-of-type {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,34 @@
+---
+title: "Read your first order"
+description: "Use a local file to see how many of ten requested shares have filled."
+---
+
+## Inspect a paper order snapshot
+
+[Download the paper order lab](/paper-order-lab.zip). You need Node.js 22 or later and an archive extractor. The ZIP contains a script and three synthetic JSON snapshots of the same ten-share US stock order in paper trading. Once downloaded, the example runs offline without packages or an Alpaca account.
+
+In the folder containing the ZIP, run:
+
+```sh
+unzip paper-order-lab.zip
+cd paper-order-lab
+node inspect.mjs fixtures/accepted.json
+```
+
+You should see:
+
+```text
+Order: 11111111-2222-4333-8444-555555555555
+Status: accepted
+Filled: 0 of 10 shares
+```
+
+The example’s `filled_qty` is `"0"`. At this snapshot, zero shares have filled. To see what changes when some shares execute, read the second file:
+
+```sh
+node inspect.mjs fixtures/partial.json
+```
+
+The status is now `partially_filled`. The script reports `Filled: 3 of 10 shares`. The order ID is the same. These three shares are the total filled so far for this order.
+
+What should your dashboard show if the rest is canceled? [Check the final snapshot](/guides/check-an-order).

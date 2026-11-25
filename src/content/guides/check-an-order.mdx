@@ -1,0 +1,47 @@
+---
+title: "Check how much of an order filled"
+description: "Trace a partial fill through cancellation, then look up an existing paper order by its ID."
+keywords: ["canceled paper order", "partial fill", "order lookup"]
+---
+
+## Did any shares fill before cancellation? {/* #read-the-filled-quantity-after-cancellation */}
+
+A canceled paper order for US stocks can have earlier fills. If the support ticket gives only the status, the quantity is unknown. Check `filled_qty` on that order’s latest snapshot. Zero means no shares filled. A positive value gives the total shares filled before cancellation. [Look up the existing paper order](#look-up-an-existing-paper-order) with its Alpaca ID using `GET /v2/orders/{order_id}`.
+
+To try the synthetic example from the lab folder you unpacked in the [quickstart](/quickstart), run:
+
+```sh
+node inspect.mjs fixtures/canceled.json
+```
+
+The synthetic paper order reports `status: canceled`, `qty: "10"` and `filled_qty: "3"`. Three shares filled before cancellation. The remaining seven will not execute on that order. Show **3 of 10 filled, remainder canceled**. The order record alone cannot tell you the account’s position.
+
+| Sample snapshot | Status | Filled so far |
+| --- | --- | ---: |
+| Received | `accepted` | 0 of 10 |
+| Partly executed | `partially_filled` | 3 of 10 |
+| Remainder canceled | `canceled` | 3 of 10 |
+
+The three rows have the same order ID. Adding their filled quantities would double-count the same three shares. These are selected example snapshots. An order can follow other paths. [Alpaca order lifecycle](https://docs.alpaca.markets/us/docs/orders-at-alpaca)
+
+## Look up an existing paper order
+
+To check the latest snapshot, use the paper Trading API’s read-only `GET /v2/orders/{order_id}` with the Alpaca-assigned `id`. Use your paper key pair and the ID of a US stock order placed by share quantity in that paper account. The example UUID in the lab belongs only to the fixture.
+
+With `ORDER_ID`, `APCA_API_KEY_ID` and `APCA_API_SECRET_KEY` set in your shell, run this from the extracted lab folder:
+
+```sh
+curl --fail-with-body --silent --show-error \
+  -H "APCA-API-KEY-ID: $APCA_API_KEY_ID" \
+  -H "APCA-API-SECRET-KEY: $APCA_API_SECRET_KEY" \
+  "https://paper-api.alpaca.markets/v2/orders/$ORDER_ID" \
+  -o order.json && node inspect.mjs order.json
+```
+
+Compare `filled_qty` with `qty` and read `status` alongside them. The script prints shares for `asset_class: "us_equity"`, including fractional shares. If an older snapshot omits the asset class, it prints `units`. A notional order specifies a cash amount and may have no `qty`. [Order lookup reference](https://docs.alpaca.markets/us/reference/getorderbyorderid-1) · [Paper trading environment](https://docs.alpaca.markets/us/docs/paper-trading)
+
+## Recover the order after a lost response
+
+If the original response timed out and your app saved a `client_order_id`, query the paper account with that ID before considering another submission. A timeout leaves the first order’s status unknown. Submitting again can create another order.
+
+Use `GET /v2/orders:by_client_order_id` with the `client_order_id` query parameter. The response contains the Alpaca `id`, `status` and `filled_qty`. For a missing record, check the paper account, order identifier and endpoint before drawing a conclusion about a fill. [Client order ID lookup](https://docs.alpaca.markets/us/reference/getorderbyclientorderid)

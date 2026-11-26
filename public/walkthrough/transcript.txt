@@ -1,0 +1,66 @@
+Paper Order Guide walkthrough
+
+A silent screen recording of the guide. Select full screen to inspect the interface.
+
+00:00   Customer ticket
+“My paper order was canceled. Did any shares fill?”
+The overview links the customer ticket to the cancellation guide, the lost-response lookup, and the offline order lab.
+
+00:05   On-page order comparison
+Follow one synthetic order through acceptance and a partial fill.
+The Accepted, Partial fill, and Canceled tabs show cumulative filled shares of 0, 3, and 3 for the same ten-share order.
+
+00:10   On-page order comparison
+Three of ten shares filled. Canceling the rest preserves those three.
+
+00:15   Source fixture
+The canceled fixture preserves the original order ID and its filled quantity.
+The expanded canceled.json record shows qty "10", filled_qty "3", and status "canceled".
+
+00:20   Offline Node lab
+Run the downloaded lab in Node. It prints 0, 3, then 3 filled shares.
+In the extracted paper-order-lab directory, a shell loop runs node inspect.mjs on the accepted, partial, and canceled fixture files. The final output lines report 0, 3, and 3 of 10 shares filled, in that order.
+
+00:26   Native search
+Ask the same question through page search and MCP section search.
+The search question is the original customer ticket. The Run search button calls both native endpoints.
+
+00:30   Search results
+Page search finds the guide. Section search returns the passage to cite.
+Page search returns “Check how much of an order filled.” MCP section search returns “Did any shares fill before cancellation?” The section result links directly to that heading.
+
+00:36   Cited passage
+Read filled_qty on the customer’s own order before giving a count.
+The cited passage describes a read-only GET /v2/orders/{order_id}. Zero filled_qty means no shares filled. A positive value gives the cumulative quantity already executed.
+
+00:42   Writer question
+A writer asks how to test which excerpt an assistant will receive.
+The question changes to “Our help article reads well in the browser. How can I check which excerpt an assistant will get for a ticket and tell if changing the wording helped?”
+
+00:47   Writer results
+Thally now returns the teaching article and its section-search test.
+The first page is “Build a support guide with Thally.” The first section is “Test your answer with Thally section search.” Both cite the teaching article.
+
+00:52   Teaching article
+The tutorial asks you to write the missing troubleshooting passage.
+The tutorial prompts the writer to inspect the synthetic fixture and add a troubleshooting heading and answer to the starter site.
+
+00:57   Passage review
+This first-place excerpt gives the customer a fill count from the lab.
+The learner site returned the original passage first out of three. It assigns the sample order’s three fills directly to the customer.
+
+01:03   Edit a copy
+Revise the draft locally. Rebuild your own site to measure its rank.
+The editor writes “A canceled status alone leaves the fill count unknown. Look up the customer’s order by its Alpaca ID and read filled_qty.” The draft stays in the browser tab. Measuring its rank requires pasting it into the learner site, rebuilding, and querying again.
+
+01:11   Recorded revision
+Both recorded builds ranked first. These canceled orders filled 3 and 0.
+The recorded revision also ranked first. The table shows two separate canceled synthetic orders. The lab fixture filled three of ten shares. The second fixture filled zero of ten.
+
+01:19   Agent access
+Use search_sections, then read_page to verify the cited heading.
+The agent reference explains how to pass a section result’s page_id to read_page, inspect the surrounding Markdown, and cite the matching heading.
+
+01:26   MCP response excerpt
+The section link’s fragment matches the heading ID from read_page.
+Both responses concern guides/check-an-order. The search_sections result points to the heading “Did any shares fill before cancellation?” Its section URL fragment is read-the-filled-quantity-after-cancellation. The read_page response contains that same ID in the page’s headings array.

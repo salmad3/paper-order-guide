@@ -12,7 +12,7 @@ An assistant can read this guide anonymously. The [documentation index](/llms.tx
 Choose a remote server with **Streamable HTTP** transport. Copy the `endpoint` from [this site’s MCP manifest](/.well-known/mcp.json). For this Thally guide, enter this URL.
 
 ```text
-https://salmaddocs-paper-orders.vercel.app/api/mcp
+https://paper-orders.salmaddocs.com/api/mcp
 ```
 
 On a local preview, open the manifest on that preview and use its endpoint. The server reads published documentation without an API key. Call `list_pages` to see the available page IDs, titles and URLs. Keep brokerage credentials in the application that reads your paper account.
@@ -30,7 +30,7 @@ The guide can establish which field an application should inspect. A customer’
 Append `?format=md` to a Thally page URL to fetch Markdown or `?format=json` to fetch headings, links and navigation. In a browser, open the [quickstart as Markdown](/quickstart.md) or the [quickstart as JSON](/api/docs/quickstart?format=json). In JSON, `nav.next.href` gives the next page when one exists and `canonical_url` gives the human URL to cite.
 
 ```sh
-curl -fsS 'https://salmaddocs-paper-orders.vercel.app/quickstart?format=md'
+curl -fsS 'https://paper-orders.salmaddocs.com/quickstart?format=md'
 ```
 
 To inspect a real tool response alongside its rendered heading, [open the search comparison](/guides/check-your-build#try-the-search-on-this-example-site).

@@ -2,6 +2,12 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "env": {
-    "THALLY_STORAGE": "memory"
+    "THALLY_STORAGE": "memory",
+    "THALLY_SITE_URL": "https://paper-orders.salmaddocs.com"
+  },
+  "build": {
+    "env": {
+      "THALLY_SITE_URL": "https://paper-orders.salmaddocs.com"
+    }
   }
 }

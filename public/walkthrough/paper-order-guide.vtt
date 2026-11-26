@@ -12,7 +12,7 @@ Three of ten shares filled. Canceling the rest preserves those three.
 00:00:15.000 --> 00:00:20.000 line:78% align:center
 The canceled fixture preserves the original order ID and its filled quantity.
 
-00:00:20.000 --> 00:00:26.000 line:78% align:center
+00:00:20.000 --> 00:00:26.000 line:54% align:center
 Run the downloaded lab in Node. It prints 0, 3, then 3 filled shares.
 
 00:00:26.000 --> 00:00:30.500 line:78% align:center
@@ -39,12 +39,12 @@ This first-place excerpt gives the customer a fill count from the lab.
 00:01:03.500 --> 00:01:11.500 line:78% align:center
 Revise the draft locally. Rebuild your own site to measure its rank.
 
-00:01:11.500 --> 00:01:19.500 line:78% align:center
+00:01:11.500 --> 00:01:19.500 line:44% align:center
 Both recorded builds ranked first. These canceled orders filled 3 and 0.
 
 00:01:19.500 --> 00:01:26.500 line:78% align:center
 Use search_sections, then read_page to verify the cited heading.
 
-00:01:26.500 --> 00:01:33.000 line:78% align:center
+00:01:26.500 --> 00:01:33.000 line:27% align:center
 The section link’s fragment matches the heading ID from read_page.
 

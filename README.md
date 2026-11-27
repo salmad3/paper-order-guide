@@ -1,11 +1,11 @@
 # Paper Order Guide
 
-This is the source for the [Paper Order Guide](https://paper-orders.salmaddocs.com/), a self-hosted Thally site for developers who need to interpret fills on an Alpaca Trading API paper order.
+This is the source for the [Paper Order Guide](https://enchanting-gingersnap-1d4b9e.netlify.app/), a self-hosted Thally site for developers who need to interpret fills on an Alpaca Trading API paper order.
 
-- [Run the quickstart](https://paper-orders.salmaddocs.com/quickstart) to inspect the same synthetic order at acceptance, after a partial fill, and after cancellation. The downloaded Node script runs offline.
-- [Check a canceled order](https://paper-orders.salmaddocs.com/guides/check-an-order#read-the-filled-quantity-after-cancellation) or [recover a lost response](https://paper-orders.salmaddocs.com/guides/check-an-order#recover-the-order-after-a-lost-response) to find the read-only lookup for an existing paper order.
-- [Build a support guide with Thally](https://paper-orders.salmaddocs.com/guides/publish-with-thally) to write a troubleshooting passage and test what your own site returns.
-- [Connect an agent](https://paper-orders.salmaddocs.com/guides/agent-access) to read and cite documentation. The [page index](https://paper-orders.salmaddocs.com/llms.txt) and [MCP manifest](https://paper-orders.salmaddocs.com/.well-known/mcp.json) are public.
+- [Run the quickstart](https://enchanting-gingersnap-1d4b9e.netlify.app/quickstart) to inspect the same synthetic order at acceptance, after a partial fill, and after cancellation. The downloaded Node script runs offline.
+- [Check a canceled order](https://enchanting-gingersnap-1d4b9e.netlify.app/guides/check-an-order#read-the-filled-quantity-after-cancellation) or [recover a lost response](https://enchanting-gingersnap-1d4b9e.netlify.app/guides/check-an-order#recover-the-order-after-a-lost-response) to find the read-only lookup for an existing paper order.
+- [Build a support guide with Thally](https://enchanting-gingersnap-1d4b9e.netlify.app/guides/publish-with-thally) to write a troubleshooting passage and test what your own site returns.
+- [Connect an agent](https://enchanting-gingersnap-1d4b9e.netlify.app/guides/agent-access) to read and cite documentation. The [page index](https://enchanting-gingersnap-1d4b9e.netlify.app/llms.txt) and [MCP manifest](https://enchanting-gingersnap-1d4b9e.netlify.app/.well-known/mcp.json) are public.
 
 ## Run the site locally
 
@@ -20,13 +20,25 @@ npm start -- --hostname 127.0.0.1 --port 3041
 
 Open the [local preview](http://localhost:3041/). The [local search comparison](http://localhost:3041/guides/check-your-build#try-the-search-on-this-example-site) runs both full-text page search and MCP section search against that build.
 
+## Self-host on Netlify
+
+Import the repository into Netlify with the repository root as the base directory, or upload a source ZIP with `netlify.toml` at its root. The configuration pins Node.js, builds the Thally search inputs and serves the Next.js site with the Netlify adapter.
+
+Open `/.well-known/mcp.json` on the deployed site. Its `endpoint` should use that same hostname. To check the citation a reader gets, run:
+
+```sh
+node public/search-passages.mjs YOUR_ORIGIN "My paper order was canceled. Did any shares fill?"
+```
+
+The first result should open “Did any shares fill before cancellation?” in the troubleshooting guide.
+
 ## Self-host on Vercel
 
 Import the Git repository into Vercel or upload its clean source directory with Vercel Drop. Include the project files, lockfile, MDX and `public/` assets. Use the repository root and the Next.js framework preset. The Node.js range in `package.json` selects the tested 22.x major. Vercel runs the production build and serves Thally’s page and section searches from the same domain as the documentation.
 
 This read-only guide uses `THALLY_STORAGE=memory` in `vercel.json`. Runtime counters live for the lifetime of each server instance. The documentation and search inputs come from the deployed source.
 
-On Vercel, `vercel.json` sets `THALLY_SITE_URL` to `https://paper-orders.salmaddocs.com` for both the build and the deployed functions. The MCP manifest advertises the endpoint on the hostname that served the request. For your own deployment, replace that origin in both Vercel settings, the published links in this README, and the examples in `src/content/guides/agent-access.mdx`. Add your domain to the Vercel project, follow its DNS instructions, then redeploy. Local npm builds can use `THALLY_SITE_URL=http://localhost:3041`.
+On Vercel, `vercel.json` sets `THALLY_SITE_URL` to `https://paper-orders.salmaddocs.com` for both the build and the deployed functions. The MCP manifest advertises the endpoint on the hostname that served the request. For your own deployment, replace that origin in both Vercel settings. Add your domain to the Vercel project, follow its DNS instructions, then redeploy. Local npm builds can use `THALLY_SITE_URL=http://localhost:3041`.
 
 Open the production quickstart signed out. Fetch `/.well-known/mcp.json` and confirm that its `endpoint` uses your production hostname. Run `node public/search-passages.mjs YOUR_ORIGIN "My paper order was canceled. Did any shares fill?"`. The first citation should open the troubleshooting guide at “Did any shares fill before cancellation?” [Thally’s Vercel deployment guide](https://docs.thally.io/guides/deploy-vercel)
 

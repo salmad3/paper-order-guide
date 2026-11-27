@@ -77,3 +77,20 @@ node inspect.mjs fixtures/canceled.json
 ```
 
 Expect the canceled status and three of ten shares filled. Open `fixtures/canceled.json` to check that the order ID and both quantities match what the program printed. The synthetic snapshot makes this check repeatable without credentials or network access. A reader using an existing Alpaca paper order will see that order’s own values.
+
+## Review a change to the lab
+
+Suppose two more shares of the sample order fill before cancellation. From the extracted `paper-order-lab` directory, make a temporary copy of the final record with five shares filled. This is a change to the teaching example. The Trading API fields and their meanings stay the same.
+
+```sh
+revised=$(mktemp)
+node -p 'JSON.stringify({ ...require("./fixtures/canceled.json"), filled_qty: "5" })' > "$revised"
+node inspect.mjs fixtures/canceled.json
+node inspect.mjs "$revised"
+```
+
+Both records have the same ID and canceled status. The inspector prints `Filled: 3 of 10 shares` for the original and `Filled: 5 of 10 shares` for the revision. If you shipped the revised fixture, which parts of your guide would now mislead someone?
+
+- **Quickstart and download.** Update the final sample output to five filled and five canceled. Rebuild the lab ZIP and run the inspector on the downloaded copy.
+- **Troubleshooting passage.** Update any sentence that assigns three fills to the final example. Keep the instruction to look up the customer’s own order and read its `filled_qty`. That instruction still works for both records.
+- **Review before publishing.** Rebuild your preview, repeat the original ticket in page and section search, and open the citation. Give a reviewer the fixture diff, the inspector output and the returned passage. They can now decide whether every claim about the revised example has caught up.

@@ -63,7 +63,13 @@ const nextConfig: NextConfig = {
       process.env.THALLY_DISABLE_BUILD_CACHE !== '1',
   },
   async headers() {
-    return [{ source: '/:path*', headers: securityHeaders }]
+    return [
+      { source: '/:path*', headers: securityHeaders },
+      {
+        source: '/api/search',
+        headers: [{ key: 'Netlify-Vary', value: 'query=q|mode|locale|limit' }],
+      },
+    ]
   },
   async redirects() {
     return [

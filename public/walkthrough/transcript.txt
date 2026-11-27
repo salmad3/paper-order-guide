@@ -8,28 +8,28 @@ Desktop 0:00  ·  Phone 0:00
 The tour opens on the Alpaca paper order guide. The overview links to three tasks. Answer a cancellation ticket, recover an order after a lost response, or run the offline lab. The desktop header has Paper orders, Write a guide, and Agent reference. On a phone, the navigation drawer gives access to the pages. In the header search, the viewer types “client order ID.” The troubleshooting guide appears first. The viewer closes search and opens Offline order lab.
 
 Offline order lab
-Desktop 0:16  ·  Phone 0:16
+Desktop 0:15  ·  Phone 0:16
 
 The download contains a Node.js inspector and three synthetic snapshots of one US stock order. The accepted example prints zero of ten shares filled. In the browser comparison, selecting Partial fill turns three cells green. Selecting Canceled keeps the same three filled shares and marks the other seven canceled. Opening the fixture JSON shows the order ID, qty, filled_qty and status. The viewer opens Canceled orders and ID lookups.
 
 Order lookups
-Desktop 0:40  ·  Phone 0:43
+Desktop 0:40  ·  Phone 0:42
 
 The customer supplied only the canceled status. Their own executed quantity is still unknown. The suggested reply asks for the order ID. The viewer follows the link to the read-only lookup by Alpaca ID, GET /v2/orders/{order_id}. On the existing order record, a zero filled_qty means no shares filled. A positive value gives the cumulative fill count. If the app lost the original response but saved its client_order_id, the guide shows GET /v2/orders:by_client_order_id for recovering that same order. A missing record leaves the count unknown. The viewer continues to Write a guide.
 
 Write a guide
-Desktop 1:00  ·  Phone 1:04
+Desktop 0:59  ·  Phone 1:03
 
 The teaching article explains how to build a three-page support site with Thally. It points to the scaffold, starter pages, paper order lab and search helper. The writing prompt calls for a troubleshooting passage under a heading in the customer’s words, a read-only lookup, an interpretation of filled_qty and a labeled example. The next instructions show how to wire the pages in docs.json, save the preview address and start the local build. The test section explains how to run the helper against that address and inspect the first excerpt and citation. The final section explains publishing through self-hosting or Thally Cloud. The viewer proceeds to Verify your build.
 
 Verify your build
-Desktop 1:33  ·  Phone 1:40
+Desktop 1:32  ·  Phone 1:37
 
 The viewer runs the customer’s ticket against the example site. Page search finds “Check how much of an order filled.” The first MCP section is “Did any shares fill before cancellation?” Replacing the ticket with a writer’s question returns “Test your answer with Thally section search.”
 
 The passage exercise shows a first-ranked answer from a learner build. It wrongly assigns the sample’s three filled shares to the customer. The viewer opens Edit a copy and types “Check the customer’s paper order and read filled_qty.” This draft stays in the tab. A separate disclosure opens the recorded revision. Both versions ranked first. Two canceled example orders have different filled quantities, three and zero. To measure an edit, copy it into the source, rebuild and repeat the original search. The viewer scrolls through the appendix instructions for checking the served page against its source, inspecting a raw MCP response and verifying the downloaded ZIP.
 
 Agent access
-Desktop 2:19  ·  Phone 2:35
+Desktop 2:18  ·  Phone 2:31
 
 More page actions offers View as Markdown. Agent access identifies the public, read-only MCP endpoint. The viewer opens the site’s discovery manifest and returns to the connection instructions. The guide explains how search_sections returns passages, read_page supplies their surrounding source and section_url links to a precise heading. The viewer follows the cited link to recovery by client order ID and returns to the agent guide. The quickstart is also available as Markdown and JSON over HTTP. The recording ends on the actual Markdown source at /quickstart.md. Open /quickstart, without the .md suffix, to return to the rendered guide.

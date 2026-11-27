@@ -32,133 +32,133 @@ when the order is canceled.
 The JSON shows qty, status
 and filled_qty.
 
-00:00:40.333 --> 00:00:43.200 line:76% position:50% size:91% align:center
+00:00:40.333 --> 00:00:42.433 line:76% position:50% size:91% align:center
 The navigation links to
 the troubleshooting page.
 
-00:00:43.200 --> 00:00:45.667 line:76% position:50% size:91% align:center
+00:00:42.433 --> 00:00:44.900 line:76% position:50% size:91% align:center
 The troubleshooting guide
 opens on cancellation.
 
-00:00:45.667 --> 00:00:50.767 line:76% position:50% size:91% align:center
+00:00:44.900 --> 00:00:50.000 line:76% position:50% size:91% align:center
 The reply asks for the ID
 to check the actual order.
 
-00:00:50.767 --> 00:00:53.833 line:76% position:50% size:91% align:center
+00:00:50.000 --> 00:00:53.067 line:76% position:50% size:91% align:center
 The link opens the
 read-only lookup by ID.
 
-00:00:53.833 --> 00:00:57.967 line:76% position:50% size:91% align:center
+00:00:53.067 --> 00:00:57.200 line:76% position:50% size:91% align:center
 The second lookup accepts
 the saved client_order_id.
 
-00:00:57.967 --> 00:01:01.867 line:76% position:50% size:91% align:center
+00:00:57.200 --> 00:01:01.100 line:76% position:50% size:91% align:center
 The guide explains what
 a 404 leaves unresolved.
 
-00:01:01.867 --> 00:01:04.767 line:76% position:50% size:91% align:center
+00:01:01.100 --> 00:01:03.233 line:76% position:50% size:91% align:center
 The navigation opens
 the teaching article.
 
-00:01:04.767 --> 00:01:07.267 line:76% position:50% size:91% align:center
+00:01:03.233 --> 00:01:05.733 line:76% position:50% size:91% align:center
 The teaching article opens
 on the three-page project.
 
-00:01:07.267 --> 00:01:13.967 line:76% position:50% size:91% align:center
+00:01:05.733 --> 00:01:12.300 line:76% position:50% size:91% align:center
 The article shows the
 scaffold and seed files.
 
-00:01:13.967 --> 00:01:23.000 line:76% position:50% size:91% align:center
+00:01:12.300 --> 00:01:21.333 line:76% position:50% size:91% align:center
 The instructions identify
 the page and its heading.
 
-00:01:23.000 --> 00:01:29.333 line:76% position:50% size:91% align:center
+00:01:21.333 --> 00:01:27.533 line:76% position:50% size:91% align:center
 A tabs example sets up
 the guide navigation.
 
-00:01:29.333 --> 00:01:33.167 line:76% position:50% size:91% align:center
+00:01:27.533 --> 00:01:31.367 line:76% position:50% size:91% align:center
 The helper prints the rank,
 link and returned text.
 
-00:01:33.167 --> 00:01:37.600 line:76% position:50% size:91% align:center
+00:01:31.367 --> 00:01:35.800 line:76% position:50% size:91% align:center
 The final section covers
 self-hosting and Cloud.
 
-00:01:37.600 --> 00:01:40.500 line:76% position:50% size:91% align:center
+00:01:35.800 --> 00:01:37.967 line:76% position:50% size:91% align:center
 The navigation opens
 the example-site tests.
 
-00:01:40.500 --> 00:01:46.867 line:76% position:50% size:91% align:center
+00:01:37.967 --> 00:01:44.333 line:76% position:50% size:91% align:center
 The example site offers
 page and section search.
 
-00:01:46.867 --> 00:01:52.067 line:76% position:50% size:91% align:center
+00:01:44.333 --> 00:01:49.533 line:76% position:50% size:91% align:center
 The first section answers
 the cancellation question.
 
-00:01:52.067 --> 00:01:58.467 line:76% position:50% size:91% align:center
+00:01:49.533 --> 00:01:55.800 line:76% position:50% size:91% align:center
 The search field gets
 a different question.
 
-00:01:58.467 --> 00:02:03.233 line:76% position:50% size:91% align:center
+00:01:55.800 --> 00:02:00.567 line:76% position:50% size:91% align:center
 The first section names
 the writer’s test steps.
 
-00:02:03.233 --> 00:02:05.800 line:76% position:50% size:91% align:center
+00:02:00.567 --> 00:02:03.133 line:76% position:50% size:91% align:center
 The recorded learner result
 appears below live search.
 
-00:02:05.800 --> 00:02:10.267 line:76% position:50% size:91% align:center
+00:02:03.133 --> 00:02:07.600 line:76% position:50% size:91% align:center
 The example wrongly uses
 the sample’s three fills.
 
-00:02:10.267 --> 00:02:15.600 line:76% position:50% size:91% align:center
+00:02:07.600 --> 00:02:12.933 line:76% position:50% size:91% align:center
 The draft stays in the tab.
 
-00:02:15.600 --> 00:02:23.500 line:76% position:50% size:91% align:center
+00:02:12.933 --> 00:02:20.833 line:76% position:50% size:91% align:center
 Two canceled fixtures have
 different fill counts.
 
-00:02:23.500 --> 00:02:25.867 line:76% position:50% size:91% align:center
+00:02:20.833 --> 00:02:23.200 line:76% position:50% size:91% align:center
 The appendix compares
 source with served copy.
 
-00:02:25.867 --> 00:02:32.567 line:76% position:50% size:91% align:center
+00:02:23.200 --> 00:02:29.633 line:76% position:50% size:91% align:center
 The last two checks cover
 MCP output and the ZIP.
 
-00:02:32.567 --> 00:02:35.467 line:76% position:50% size:91% align:center
+00:02:29.633 --> 00:02:31.800 line:76% position:50% size:91% align:center
 The navigation opens
 the agent reference.
 
-00:02:35.467 --> 00:02:39.500 line:76% position:50% size:91% align:center
+00:02:31.800 --> 00:02:35.833 line:76% position:50% size:91% align:center
 The agent reference opens
 on the public guide.
 
-00:02:39.500 --> 00:02:42.300 line:76% position:50% size:91% align:center
+00:02:35.833 --> 00:02:38.633 line:76% position:50% size:91% align:center
 The page menu lists
 View as Markdown.
 
-00:02:42.300 --> 00:02:46.367 line:76% position:50% size:91% align:center
+00:02:38.633 --> 00:02:42.700 line:76% position:50% size:91% align:center
 The guide shows its
 public MCP endpoint.
 
-00:02:46.367 --> 00:02:53.333 line:76% position:50% size:91% align:center
+00:02:42.700 --> 00:02:49.400 line:76% position:50% size:91% align:center
 The manifest identifies
 the documentation server.
 
-00:02:53.333 --> 00:02:58.167 line:76% position:50% size:91% align:center
+00:02:49.400 --> 00:02:54.233 line:76% position:50% size:91% align:center
 read_page supplies the
 surrounding source.
 
-00:02:58.167 --> 00:03:02.933 line:76% position:50% size:91% align:center
+00:02:54.233 --> 00:02:58.700 line:76% position:50% size:91% align:center
 The link lands at the
 client order ID section.
 
-00:03:02.933 --> 00:03:09.333 line:76% position:50% size:91% align:center
+00:02:58.700 --> 00:03:05.100 line:76% position:50% size:91% align:center
 Links open machine-readable
 versions of the quickstart.
 
-00:03:09.333 --> 00:03:13.567 line:76% position:50% size:91% align:center
+00:03:05.100 --> 00:03:09.333 line:76% position:50% size:91% align:center
 Open /quickstart without .md
 for the rendered lab.

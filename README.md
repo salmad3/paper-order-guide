@@ -7,8 +7,6 @@ This is the source for the [Paper Order Guide](https://paper-orders.salmaddocs.c
 - [Build a support guide with Thally](https://paper-orders.salmaddocs.com/guides/publish-with-thally) to write a troubleshooting passage and test what your own site returns.
 - [Connect an agent](https://paper-orders.salmaddocs.com/guides/agent-access) to read and cite documentation. The [page index](https://paper-orders.salmaddocs.com/llms.txt) and [MCP manifest](https://paper-orders.salmaddocs.com/.well-known/mcp.json) are public.
 
-[Watch the walkthrough](https://paper-orders.salmaddocs.com/#walkthrough) or [read the transcript](https://paper-orders.salmaddocs.com/walkthrough/transcript.txt).
-
 ## Run the site locally
 
 Use Node.js 22.23.4 and npm. From the project root:

@@ -89,6 +89,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       { source: '/favicon.ico', destination: '/api/brand/favicon' },
+      { source: '/walkthrough', destination: '/walkthrough/index.html' },
       // Agent-discovery documents. Served by a route handler (not static
       // files) so every deployment emits absolute URLs for its own origin.
       { source: '/.well-known/api-catalog', destination: '/api/well-known/api-catalog' },

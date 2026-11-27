@@ -1,0 +1,14 @@
+[build]
+  command = "node --import tsx scripts/build-runtime-sources.mts && node --conditions=react-server --import tsx scripts/build-embeddings.ts && node node_modules/next/dist/bin/next build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22.23.4"
+  THALLY_STORAGE = "memory"
+  THALLY_EMBEDDING_PROVIDER = "local"
+
+[functions]
+  included_files = [".thally/embeddings/*.json"]
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

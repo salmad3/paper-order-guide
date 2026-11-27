@@ -1,0 +1,38 @@
+[
+  {
+    "id": "overview",
+    "label": "Overview",
+    "wide": 0.0,
+    "phone": 0.0
+  },
+  {
+    "id": "lab",
+    "label": "Offline order lab",
+    "wide": 16.133,
+    "phone": 16.367
+  },
+  {
+    "id": "lookups",
+    "label": "Order lookups",
+    "wide": 40.333,
+    "phone": 43.2
+  },
+  {
+    "id": "write",
+    "label": "Write a guide",
+    "wide": 60.333,
+    "phone": 64.767
+  },
+  {
+    "id": "verify",
+    "label": "Verify your build",
+    "wide": 93.033,
+    "phone": 100.5
+  },
+  {
+    "id": "agents",
+    "label": "Agent access",
+    "wide": 139.5,
+    "phone": 155.467
+  }
+]

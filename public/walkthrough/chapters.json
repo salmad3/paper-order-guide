@@ -8,31 +8,31 @@
   {
     "id": "lab",
     "label": "Offline order lab",
-    "wide": 15.9,
-    "phone": 16.367
+    "wide": 16.1,
+    "phone": 18.233
   },
   {
     "id": "lookups",
     "label": "Order lookups",
-    "wide": 40.0,
-    "phone": 42.433
+    "wide": 40.2,
+    "phone": 44.3
   },
   {
     "id": "write",
     "label": "Write a guide",
-    "wide": 59.9,
-    "phone": 63.233
+    "wide": 60.1,
+    "phone": 65.1
   },
   {
     "id": "verify",
     "label": "Verify your build",
-    "wide": 92.233,
-    "phone": 97.967
+    "wide": 94.4,
+    "phone": 99.5
   },
   {
     "id": "agents",
     "label": "Agent access",
-    "wide": 138.3,
-    "phone": 151.8
+    "wide": 163.933,
+    "phone": 176.067
   }
 ]

@@ -1,148 +1,172 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:07.900 line:76% position:50% size:91% align:center
-The homepage lists three
-paths for paper orders.
+00:00:00.000 --> 00:00:09.533 line:76% position:50% size:91% align:center
+The Node.js lab reads three
+synthetic Alpaca records.
 
-00:00:07.900 --> 00:00:13.467 line:76% position:50% size:91% align:center
+00:00:09.533 --> 00:00:14.600 line:76% position:50% size:91% align:center
 The search dialog finds
 the troubleshooting guide.
 
-00:00:13.467 --> 00:00:15.900 line:76% position:50% size:91% align:center
+00:00:14.600 --> 00:00:16.100 line:76% position:50% size:91% align:center
 The lab opens from
 the site navigation.
 
-00:00:15.900 --> 00:00:20.033 line:76% position:50% size:91% align:center
+00:00:16.100 --> 00:00:20.233 line:76% position:50% size:91% align:center
 The ZIP includes a script
 and three sample records.
 
-00:00:20.033 --> 00:00:23.833 line:76% position:50% size:91% align:center
+00:00:20.233 --> 00:00:24.033 line:76% position:50% size:91% align:center
 The Node.js example
 prints 0 of 10 filled.
 
-00:00:23.833 --> 00:00:30.867 line:76% position:50% size:91% align:center
+00:00:24.033 --> 00:00:31.067 line:76% position:50% size:91% align:center
 The tabs switch among
 three states of one order.
 
-00:00:30.867 --> 00:00:33.900 line:76% position:50% size:91% align:center
+00:00:31.067 --> 00:00:34.100 line:76% position:50% size:91% align:center
 Three squares stay filled
 when the order is canceled.
 
-00:00:33.900 --> 00:00:40.000 line:76% position:50% size:91% align:center
+00:00:34.100 --> 00:00:40.200 line:76% position:50% size:91% align:center
 The JSON shows qty, status
 and filled_qty.
 
-00:00:40.000 --> 00:00:42.467 line:76% position:50% size:91% align:center
+00:00:40.200 --> 00:00:42.667 line:76% position:50% size:91% align:center
 The troubleshooting guide
 opens on cancellation.
 
-00:00:42.467 --> 00:00:47.533 line:76% position:50% size:91% align:center
+00:00:42.667 --> 00:00:47.733 line:76% position:50% size:91% align:center
 The reply asks for the ID
 to check the actual order.
 
-00:00:47.533 --> 00:00:51.900 line:76% position:50% size:91% align:center
+00:00:47.733 --> 00:00:52.100 line:76% position:50% size:91% align:center
 The link opens the
 read-only lookup by ID.
 
-00:00:51.900 --> 00:00:56.033 line:76% position:50% size:91% align:center
+00:00:52.100 --> 00:00:56.233 line:76% position:50% size:91% align:center
 The second lookup accepts
 the saved client_order_id.
 
-00:00:56.033 --> 00:00:59.900 line:76% position:50% size:91% align:center
+00:00:56.233 --> 00:01:00.100 line:76% position:50% size:91% align:center
 The guide explains what
 a 404 leaves unresolved.
 
-00:00:59.900 --> 00:01:02.367 line:76% position:50% size:91% align:center
+00:01:00.100 --> 00:01:04.667 line:76% position:50% size:91% align:center
 The teaching article opens
 on the three-page project.
 
-00:01:02.367 --> 00:01:08.867 line:76% position:50% size:91% align:center
+00:01:04.667 --> 00:01:11.133 line:76% position:50% size:91% align:center
 The article shows the
 scaffold and seed files.
 
-00:01:08.867 --> 00:01:17.900 line:76% position:50% size:91% align:center
+00:01:11.133 --> 00:01:20.133 line:76% position:50% size:91% align:center
 The instructions identify
 the page and its heading.
 
-00:01:17.900 --> 00:01:24.033 line:76% position:50% size:91% align:center
+00:01:20.133 --> 00:01:26.267 line:76% position:50% size:91% align:center
 A tabs example sets up
 the guide navigation.
 
-00:01:24.033 --> 00:01:27.900 line:76% position:50% size:91% align:center
+00:01:26.267 --> 00:01:30.067 line:76% position:50% size:91% align:center
 The helper prints the rank,
 link and returned text.
 
-00:01:27.900 --> 00:01:32.233 line:76% position:50% size:91% align:center
-The final section covers
-self-hosting and Cloud.
+00:01:30.067 --> 00:01:34.400 line:76% position:50% size:91% align:center
+The article explains the
+move to Netlify.
 
-00:01:32.233 --> 00:01:38.033 line:76% position:50% size:91% align:center
+00:01:34.400 --> 00:01:40.167 line:76% position:50% size:91% align:center
 The example site offers
 page and section search.
 
-00:01:38.033 --> 00:01:41.867 line:76% position:50% size:91% align:center
+00:01:40.167 --> 00:01:44.000 line:76% position:50% size:91% align:center
 The first section answers
 the cancellation question.
 
-00:01:41.867 --> 00:01:46.867 line:76% position:50% size:91% align:center
+00:01:44.000 --> 00:01:48.967 line:76% position:50% size:91% align:center
 The search field gets
 a different question.
 
-00:01:46.867 --> 00:01:49.167 line:76% position:50% size:91% align:center
+00:01:48.967 --> 00:01:51.267 line:76% position:50% size:91% align:center
 The first section names
 the writer’s test steps.
 
-00:01:49.167 --> 00:01:51.733 line:76% position:50% size:91% align:center
+00:01:51.267 --> 00:01:53.900 line:76% position:50% size:91% align:center
 The recorded learner result
 appears below live search.
 
-00:01:51.733 --> 00:01:56.200 line:76% position:50% size:91% align:center
+00:01:53.900 --> 00:01:58.333 line:76% position:50% size:91% align:center
 The example wrongly uses
 the sample’s three fills.
 
-00:01:56.200 --> 00:02:01.500 line:76% position:50% size:91% align:center
+00:01:58.333 --> 00:02:03.633 line:76% position:50% size:91% align:center
 The draft stays in the tab.
 
-00:02:01.500 --> 00:02:09.400 line:76% position:50% size:91% align:center
+00:02:03.633 --> 00:02:11.667 line:76% position:50% size:91% align:center
 Two canceled fixtures have
 different fill counts.
 
-00:02:09.400 --> 00:02:11.867 line:76% position:50% size:91% align:center
+00:02:11.667 --> 00:02:14.033 line:76% position:50% size:91% align:center
 The appendix compares
 source with served copy.
 
-00:02:11.867 --> 00:02:18.300 line:76% position:50% size:91% align:center
-The last two checks cover
-MCP output and the ZIP.
+00:02:14.033 --> 00:02:19.367 line:76% position:50% size:91% align:center
+The appendix checks the
+MCP response and the ZIP.
 
-00:02:18.300 --> 00:02:22.367 line:76% position:50% size:91% align:center
+00:02:19.367 --> 00:02:22.933 line:76% position:50% size:91% align:center
+The next exercise revises
+the final fixture.
+
+00:02:22.933 --> 00:02:26.433 line:76% position:50% size:91% align:center
+The command writes a
+separate five-share copy.
+
+00:02:26.433 --> 00:02:30.967 line:76% position:50% size:91% align:center
+The exercise compares
+two copies of one record.
+
+00:02:30.967 --> 00:02:34.567 line:76% position:50% size:91% align:center
+The same inspector reads
+both local records.
+
+00:02:34.567 --> 00:02:39.000 line:76% position:50% size:91% align:center
+Three shares filled before.
+The revised sample has five.
+
+00:02:39.000 --> 00:02:43.933 line:76% position:50% size:91% align:center
+The sample count changes.
+The lookup still applies.
+
+00:02:43.933 --> 00:02:48.000 line:76% position:50% size:91% align:center
 The agent reference opens
 on the public guide.
 
-00:02:22.367 --> 00:02:25.167 line:76% position:50% size:91% align:center
+00:02:48.000 --> 00:02:50.833 line:76% position:50% size:91% align:center
 The page menu lists
 View as Markdown.
 
-00:02:25.167 --> 00:02:29.367 line:76% position:50% size:91% align:center
+00:02:50.833 --> 00:02:55.000 line:76% position:50% size:91% align:center
 The guide shows its
 public MCP endpoint.
 
-00:02:29.367 --> 00:02:35.833 line:76% position:50% size:91% align:center
+00:02:55.000 --> 00:03:01.400 line:76% position:50% size:91% align:center
 The manifest identifies
 the documentation server.
 
-00:02:35.833 --> 00:02:40.667 line:76% position:50% size:91% align:center
+00:03:01.400 --> 00:03:06.233 line:76% position:50% size:91% align:center
 read_page supplies the
 surrounding source.
 
-00:02:40.667 --> 00:02:44.900 line:76% position:50% size:91% align:center
+00:03:06.233 --> 00:03:10.433 line:76% position:50% size:91% align:center
 The link lands at the
 client order ID section.
 
-00:02:44.900 --> 00:02:51.033 line:76% position:50% size:91% align:center
+00:03:10.433 --> 00:03:16.433 line:76% position:50% size:91% align:center
 Links open machine-readable
 versions of the quickstart.
 
-00:02:51.033 --> 00:02:54.300 line:76% position:50% size:91% align:center
+00:03:16.433 --> 00:03:20.633 line:76% position:50% size:91% align:center
 Open /quickstart without .md
 for the rendered lab.
